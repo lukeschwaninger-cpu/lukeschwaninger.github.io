@@ -85,8 +85,8 @@ footer {
 
 /* About photo sizing */
 .about-photo {
-  width: 200px;   /* adjust as needed */
-  height: 200px;  /* makes it square */
+  width: 300px;   /* adjust as needed */
+  height: 300px;  /* makes it square */
   object-fit: cover;  /* crops if proportions differ */
   border-radius: 12px; /* rounded corners */
 }
@@ -183,7 +183,9 @@ footer {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  height: 500px !important;
+ .social-card blockquote {
+  max-height: 500px;   /* adjust number as needed */
+  overflow: auto;
 }
 
 /* If the LinkedIn embed needs a taller height on desktop, you can adjust here:
@@ -193,7 +195,7 @@ footer {
 /* Mobile adjustments: single column below 420px */
 @media (max-width: 420px) {
   .social-grid {
-    grid-template-columns: 3fr;
+    grid-template-columns: 1fr;
   }
   header h1 { font-size: 1.25rem; }
   .social-main { padding: 0 1rem; }
