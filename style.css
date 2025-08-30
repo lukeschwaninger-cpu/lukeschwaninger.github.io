@@ -83,6 +83,14 @@ footer {
   margin-right: auto;
 }
 
+/* About photo sizing */
+.about-photo {
+  width: 200px;   /* adjust as needed */
+  height: 200px;  /* makes it square */
+  object-fit: cover;  /* crops if proportions differ */
+  border-radius: 12px; /* rounded corners */
+}
+
 /* ===========================
    Projects / Cards (kept for consistency)
    =========================== */
