@@ -193,7 +193,7 @@ footer {
 /* Mobile adjustments: single column below 420px */
 @media (max-width: 420px) {
   .social-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr;
   }
   header h1 { font-size: 1.25rem; }
   .social-main { padding: 0 1rem; }
