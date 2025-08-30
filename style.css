@@ -175,7 +175,7 @@ footer {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  height: auto !important;
+  height: 500px !important;
 }
 
 /* If the LinkedIn embed needs a taller height on desktop, you can adjust here:
@@ -190,3 +190,5 @@ footer {
   header h1 { font-size: 1.25rem; }
   .social-main { padding: 0 1rem; }
 }
+
+
