@@ -6,6 +6,24 @@ si<!DOCTYPE html>
   <title>Luke Schwaninger | Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 80) {
+    // scrolling down → hide header
+    header.classList.add("header-hidden");
+  } else {
+    // scrolling up → show header
+    header.classList.remove("header-hidden");
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
 <body>
   <header>
     <h1>Luke Schwaninger</h1>
