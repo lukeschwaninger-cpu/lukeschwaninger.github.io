@@ -1,240 +1,192 @@
-/* Import Google Font */
+/* ===========================
+   Global / Typography
+   =========================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-/* Reset & base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
 body {
-  font-family: 'Inter', sans-serif;
-  background: #f5f7fa;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #1f2937;
+  background: #f5f7fa;
   line-height: 1.6;
-  padding-top: 70px; /* space for sticky header */
+  padding-top: 70px; /* for sticky header */
 }
 
-/* Header / Navbar */
+/* ===========================
+   Header / Nav (sticky)
+   =========================== */
 header {
-  background: #1e3a8a; /* deep engineering blue */
-  color: white;
-  padding: 1rem;
-  text-align: center;
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  background: #2b57c6;
+  color: #fff;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 18px 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.12);
 }
-
 header h1 {
-  margin-bottom: 0.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  font-size: 1.8rem;
+  margin-bottom: 6px;
 }
-
-nav a {
-  color: white;
-  margin: 0 14px;
+header nav a {
+  color: #fff;
+  margin: 0 12px;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease-in-out;
+}
+header nav a[aria-current="page"] {
+  text-decoration: underline;
 }
 
-nav a:hover {
-  color: #93c5fd; /* light blue */
-}
-
-/* Main content layout */
+/* ===========================
+   Default page wrapper (used on most pages)
+   =========================== */
 main {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* Section styling */
+/* Section card style (used site-wide) */
 section {
-  background: white;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-h2 {
-  margin-bottom: 1rem;
-  color: #1e3a8a;
-  font-weight: 700;
-  font-size: 1.5rem;
-  border-bottom: 3px solid #e5e7eb;
-  padding-bottom: 0.5rem;
-}
-
-h3 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  color: #374151;
-  font-weight: 600;
-}
-
-/* Lists */
-ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-ul li {
-  margin-bottom: 0.6rem;
-  line-height: 1.5;
-}
-
-/* Links */
-a {
-  color: #1e3a8a;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Projects grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.project-card {
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+  transition: transform .12s ease, box-shadow .12s ease;
 }
+section:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.project-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.project-card h3 {
-  margin: 0.5rem 0;
+h2 {
+  font-size: 1.25rem;
   color: #1e3a8a;
-  font-size: 1.2rem;
-}
-
-.project-card p {
-  font-size: 0.95rem;
   margin-bottom: 1rem;
-  color: #444;
-}
-
-.project-card a {
-  display: inline-block;
-  background: #1e3a8a;
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.project-card a:hover {
-  background: #2563eb; /* lighter blue */
+  font-weight: 700;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  background: #1e3a8a;
-  color: white;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-top: 3px solid #93c5fd;
+  margin: 2rem 0;
+  color: #fff;
+  background: #2b57c6;
+  padding: 14px;
+  border-radius: 6px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* About section with photo */
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.about-photo {
-  width: 250px;   /* adjust size to your liking */
-  height: 250px;
-  object-fit: cover;  /* crops to fill the box neatly */
-  border-radius: 12px; /* slight rounded corners (set to 0 for sharp corners) */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.about-text {
-  flex: 1;
-  font-size: 1rem;
-  color: #374151;
-}
-
-/* Social posts row */
-.social-row {
-  display: flex;
+/* ===========================
+   Projects / Cards (kept for consistency)
+   =========================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap; /* allows wrapping if screen is too narrow */
 }
-
-.social-card {
-  flex: 1 1 320px; /* grow/shrink but keep min width */
-  max-width: 500px;
-  background: #fff;
+.project-card {
+  padding: 1.2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 0.5rem;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
+
+/* ===========================
+   ---- SOCIAL PAGE OVERRIDES ----
+   These rules ensure social embeds behave responsively
+   and fill available horizontal space before wrapping.
+   =========================== */
+
+/* Make the social page container wider than the regular main */
+.social-main {
+  /* wider "stage" for social embeds — adjust max-width as you like */
+  max-width: 1400px;
+  margin: 2.25rem auto;
+  padding: 0 2rem;
 }
 
-/* Social feed as responsive grid */
+/* Responsive grid: items stay side-by-side until no room */
 .social-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 1.5rem;
+  align-items: start;
+  width: 100%;
 }
 
+/* Card that holds an embed or a screenshot */
 .social-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 0.5rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  padding: 0.75rem;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 200px;
+  transition: transform .12s ease, box-shadow .12s ease;
 }
+.social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.09); }
 
-/* Make iframes and blockquotes scale */
+/* Force embeds and images to scale to the card's width */
+/* This overrides width/min-width inline styles from embed codes */
 .social-card iframe,
-.social-card blockquote {
+.social-card img,
+.social-card blockquote,
+.social-card .instagram-media {
   width: 100% !important;
   max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Instagram embed specifics:
+   Instagram injects inline styles — these must be overwritten with !important */
+.instagram-media {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Instagram often wraps content inside inner divs — ensure they don't force min width */
+.instagram-media > div,
+.instagram-media > div * {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* LinkedIn iframe: remove default borders and make responsive */
+.social-card iframe {
+  border: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+}
+
+/* If the LinkedIn embed needs a taller height on desktop, you can adjust here:
+   (optional) e.g., .social-card iframe { min-height: 420px; }
+*/
+
+/* Mobile adjustments: single column below 420px */
+@media (max-width: 420px) {
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+  header h1 { font-size: 1.25rem; }
+  .social-main { padding: 0 1rem; }
 }
