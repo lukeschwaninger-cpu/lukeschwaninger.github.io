@@ -196,3 +196,21 @@ footer {
   font-size: 1rem;
   color: #374151;
 }
+
+/* Social posts row */
+.social-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* allows wrapping if screen is too narrow */
+}
+
+.social-card {
+  flex: 1 1 320px; /* grow/shrink but keep min width */
+  max-width: 500px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem;
+}
