@@ -92,7 +92,7 @@ footer {
 }
 
 /* ===========================
-   Projects / Cards (kept for consistency)
+   Projects / Cards
    =========================== */
 .project-grid {
   display: grid;
@@ -110,19 +110,13 @@ footer {
 
 /* ===========================
    ---- SOCIAL PAGE OVERRIDES ----
-   These rules ensure social embeds behave responsively
-   and fill available horizontal space before wrapping.
    =========================== */
-
-/* Make the social page container wider than the regular main */
 .social-main {
-  /* wider "stage" for social embeds — adjust max-width as you like */
   max-width: 1400px;
   margin: 2.25rem auto;
   padding: 0 2rem;
 }
 
-/* Responsive grid: items stay side-by-side until no room */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -131,7 +125,7 @@ footer {
   width: 100%;
 }
 
-/* Card that holds an embed or a screenshot */
+/* Card for embeds */
 .social-card {
   background: #ffffff;
   border-radius: 12px;
@@ -141,16 +135,13 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 420px;   /* force square width */
-  height: 500px;  /* force square height */
+  height: 500px;   /* fixed square */
+  width: 500px;    /* fixed square */
   transition: transform .12s ease, box-shadow .12s ease;
 }
-.social-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.09);
-}
+.social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.09); }
 
-/* Force embeds and images to scale to the card */
+/* === Force all embeds to fill the card === */
 .social-card iframe,
 .social-card img,
 .social-card blockquote,
@@ -158,45 +149,49 @@ footer {
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
+  max-height: 100% !important;
   min-width: 0 !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
   display: block !important;
-  object-fit: cover;
+  border: 0 !important;
 }
 
-/* Instagram embed specifics:
-   Instagram injects inline styles — these must be overwritten with !important */
-.instagram-media {
+/* Instagram specifics */
+.social-card .instagram-media {
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
   height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-
-/* Instagram often wraps content inside inner divs — ensure they don't force min width */
-.instagram-media > div,
-.instagram-media > div * {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  height: 100% !important;
-}
-
-/* LinkedIn iframe: remove default borders and make responsive */
-.social-card iframe {
-  border: 0;
+.social-card .instagram-media > div {
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
-.social-card blockquote {
+.social-card .instagram-media img {
+  width: 100% !important;
   height: 100% !important;
-  overflow: auto;
+  object-fit: cover !important;
 }
 
-/* Mobile adjustments: single column below 420px */
+/* LinkedIn specifics */
+.social-card iframe[src*="linkedin.com"] {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border: 0 !important;
+}
+
+/* Mobile adjustments */
 @media (max-width: 420px) {
   .social-grid {
     grid-template-columns: 1fr;
@@ -204,7 +199,8 @@ footer {
   header h1 { font-size: 1.25rem; }
   .social-main { padding: 0 1rem; }
   .social-card {
-    width: 100%;   /* let it shrink on small screens */
-    height: auto;  /* allow flexible height for mobile */
+    width: 100%;   /* full width on mobile */
+    height: auto;  /* let height adjust naturally */
+    aspect-ratio: 1 / 1; /* keep square on mobile */
   }
 }
