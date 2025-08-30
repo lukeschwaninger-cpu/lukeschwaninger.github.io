@@ -155,7 +155,7 @@ footer {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-  height: auto !important;
+  height: 500px !important;
   display: block !important;
 }
 
@@ -184,8 +184,10 @@ footer {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
+   height: 500px;
+}
  .social-card blockquote {
-  max-height: 500px;   /* adjust number as needed */
+  height: 500px;   /* adjust number as needed */
   overflow: auto;
 }
 
