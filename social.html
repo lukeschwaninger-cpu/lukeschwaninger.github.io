@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luke Schwaninger | Social</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>What Have I Been Up To?</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="social.html">Social</a>
+      <a href="social.html" aria-current="page">Social</a>
     </nav>
   </header>
 
-  <main>
-  <section>
-    <h2>Latest Updates</h2>
-    <div class="social-grid">
+  <!-- Use a dedicated "social-main" so we can make this page wider than other pages if desired -->
+  <main class="social-main">
+    <section>
+      <h2>Latest Updates</h2>
 
-      <!-- LinkedIn embed -->
-      <div class="social-card">
-        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1" 
-                height="487" frameborder="0" allowfullscreen 
-                title="Embedded post"></iframe>
-      </div>
+      <!-- GRID container: items will sit side-by-side until they must wrap -->
+      <div class="social-grid">
 
-      <!-- Instagram embed #1 -->
-      <div class="social-card">
-        <blockquote class="instagram-media" 
-          data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/" 
-          data-instgrm-version="14"></blockquote>
-      </div>
+        <!-- LinkedIn embed: NOTE we removed the width attribute so CSS controls sizing -->
+        <div class="social-card">
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
+            title="LinkedIn post"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
 
-      <!-- Instagram embed #2 -->
-      <div class="social-card">
-        <blockquote class="instagram-media" 
-          data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/" 
-          data-instgrm-version="14"></blockquote>
-      </div>
+        <!-- Instagram embed #1 -->
+        <div class="social-card">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
 
-    </div>
-    <script async src="//www.instagram.com/embed.js"></script>
-  </section>
-</main>
+        <!-- Instagram embed #2 -->
+        <div class="social-card">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
 
+        <!-- Example fallback screenshot card (optional) -->
+        <!--
+        <div class="social-card">
+          <img src="linkedin-post.png" alt="Screenshot of LinkedIn post" />
+        </div>
+        -->
+
+      </div> <!-- /.social-grid -->
+
+      <!-- Instagram embed script (keeps the blockquotes converting into embeds) -->
+      <script async src="//www.instagram.com/embed.js"></script>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Luke Schwaninger</p>
