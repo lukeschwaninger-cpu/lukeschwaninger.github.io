@@ -153,7 +153,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;     /* fixed width */
+  width: 320px;     /* fixed width */
   height: 500px;    /* fixed height */
   transition: transform .12s ease, box-shadow .12s ease;
 }
