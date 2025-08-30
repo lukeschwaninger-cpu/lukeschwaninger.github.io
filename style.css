@@ -91,11 +91,7 @@ footer {
   align-items: center;
   gap: 2rem; /* space between photo and text */
 }
-
-.about-text {
-  flex: 1; /* text expands to fill space */
-}
-
+.about-text { flex: 1; }
 .about-photo {
   width: 250px;
   height: 250px;
@@ -105,17 +101,12 @@ footer {
 
 /* Stack vertically on mobile */
 @media (max-width: 768px) {
-  .about-section {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-text {
-    margin-top: 1rem;
-  }
+  .about-section { flex-direction: column; text-align: center; }
+  .about-text { margin-top: 1rem; }
 }
 
 /* ===========================
-   Projects / Cards (kept for consistency)
+   Projects / Cards
    =========================== */
 .project-grid {
   display: grid;
@@ -133,21 +124,26 @@ footer {
 
 /* ===========================
    ---- SOCIAL PAGE OVERRIDES ----
+   Fixed rectangles: 420px x 500px
    =========================== */
+
+/* Wider stage for the social page */
 .social-main {
   max-width: 1400px;
   margin: 2.25rem auto;
   padding: 0 2rem;
 }
 
+/* Use flex so cards keep exact pixel size and wrap cleanly */
 .social-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  align-items: start;
-  width: 100%;
+  justify-content: center;  /* center rows */
+  align-items: stretch;
 }
 
+/* Fixed-size card: 420 x 500 */
 .social-card {
   background: #ffffff;
   border-radius: 12px;
@@ -157,32 +153,41 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px; /* force taller cards */
+  width: 420px;     /* fixed width */
+  height: 500px;    /* fixed height */
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.09); }
 
-/* Force embeds to scale consistently */
+/* Force all embeds to fill the card area */
 .social-card iframe,
 .social-card img,
 .social-card blockquote,
 .social-card .instagram-media {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
   display: block !important;
+  border: 0 !important;
+  object-fit: cover !important; /* crop to fill rectangle */
 }
 
-/* Instagram embed overrides */
+/* Instagram embed specifics (override inline rules from their script) */
 .social-card .instagram-media {
   margin: 0 !important;
   padding: 0 !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: hidden !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
 }
-
 .social-card .instagram-media > div {
   width: 100% !important;
   height: 100% !important;
@@ -190,26 +195,37 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 .social-card .instagram-media img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
 }
 
-/* LinkedIn iframe overrides */
-.social-card iframe {
-  border: 0;
+/* LinkedIn embed specifics */
+.social-card iframe[src*="linkedin.com"] {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  border: 0 !important;
 }
 
-/* Mobile adjustments */
-@media (max-width: 420px) {
-  .social-grid {
-    grid-template-columns: 1fr;
-  }
-  header h1 { font-size: 1.25rem; }
+/* Mobile: keep rectangular ratio while fitting narrow screens */
+@media (max-width: 480px) {
   .social-main { padding: 0 1rem; }
+  .social-grid { gap: 1rem; }
+  .social-card {
+    width: 100%;
+    /* Preserve the 420x500 aspect ratio (~0.84) when width shrinks */
+    aspect-ratio: 420 / 500;
+    height: auto;
+  }
+}
+
+/* Smooth hide/show of header */
+header {
+  transition: transform 0.3s ease;
+}
+
+header.header-hidden {
+  transform: translateY(-100%); /* slide up and hide */
 }
