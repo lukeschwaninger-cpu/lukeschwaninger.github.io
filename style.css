@@ -223,9 +223,10 @@ footer {
 
 /* Smooth hide/show of header */
 header {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 header.header-hidden {
-  transform: translateY(-100%); /* slide up and hide */
+  transform: translateY(-100%);
+  opacity: 0;
 }
