@@ -47,7 +47,7 @@ header nav a[aria-current="page"] {
    Default page wrapper (used on most pages)
    =========================== */
 main {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -175,6 +175,7 @@ footer {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
+   height: 500px;
 }
 
 /* LinkedIn iframe: remove default borders and make responsive */
