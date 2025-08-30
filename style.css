@@ -184,10 +184,10 @@ footer {
 }
 
 .about-photo {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
+  width: 250px;   /* adjust size to your liking */
+  height: 250px;
+  object-fit: cover;  /* crops to fill the box neatly */
+  border-radius: 12px; /* slight rounded corners (set to 0 for sharp corners) */
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
