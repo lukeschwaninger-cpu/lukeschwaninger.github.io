@@ -83,16 +83,39 @@ footer {
   margin-right: auto;
 }
 
-/* About photo sizing */
+/* ===========================
+   About section
+   =========================== */
+.about-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* space between photo and text */
+}
+
+.about-text {
+  flex: 1; /* text expands to fill space */
+}
+
 .about-photo {
-  width: 300px;   /* adjust as needed */
-  height: 300px;  /* makes it square */
-  object-fit: cover;  /* crops if proportions differ */
-  border-radius: 12px; /* rounded corners */
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Stack vertically on mobile */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-text {
+    margin-top: 1rem;
+  }
 }
 
 /* ===========================
-   Projects / Cards
+   Projects / Cards (kept for consistency)
    =========================== */
 .project-grid {
   display: grid;
@@ -125,7 +148,6 @@ footer {
   width: 100%;
 }
 
-/* Card for embeds */
 .social-card {
   background: #ffffff;
   border-radius: 12px;
@@ -135,41 +157,32 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;   /* fixed square */
-  width: 500px;    /* fixed square */
+  min-height: 500px; /* force taller cards */
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .social-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.09); }
 
-/* === Force all embeds to fill the card === */
+/* Force embeds to scale consistently */
 .social-card iframe,
 .social-card img,
 .social-card blockquote,
 .social-card .instagram-media {
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  min-width: 0 !important;
-  min-height: 0 !important;
   object-fit: cover !important;
   display: block !important;
-  border: 0 !important;
 }
 
-/* Instagram specifics */
+/* Instagram embed overrides */
 .social-card .instagram-media {
   margin: 0 !important;
   padding: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  max-width: none !important;
-  max-height: none !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
+
 .social-card .instagram-media > div {
   width: 100% !important;
   height: 100% !important;
@@ -177,18 +190,19 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
 .social-card .instagram-media img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
 }
 
-/* LinkedIn specifics */
-.social-card iframe[src*="linkedin.com"] {
+/* LinkedIn iframe overrides */
+.social-card iframe {
+  border: 0;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  border: 0 !important;
 }
 
 /* Mobile adjustments */
@@ -198,9 +212,4 @@ footer {
   }
   header h1 { font-size: 1.25rem; }
   .social-main { padding: 0 1rem; }
-  .social-card {
-    width: 100%;   /* full width on mobile */
-    height: auto;  /* let height adjust naturally */
-    aspect-ratio: 1 / 1; /* keep square on mobile */
-  }
 }
