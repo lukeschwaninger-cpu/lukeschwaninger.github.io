@@ -214,3 +214,27 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   padding: 0.5rem;
 }
+
+/* Social feed as responsive grid */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.social-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make iframes and blockquotes scale */
+.social-card iframe,
+.social-card blockquote {
+  width: 100% !important;
+  max-width: 100% !important;
+}
