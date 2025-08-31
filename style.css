@@ -8,6 +8,8 @@ html, body { height: 100%; }
 /* ===== Global Background with Subtle Geometric Pattern ===== */
 body {
   font-family: 'Inter', system-ui, sans-serif;
+  color: #1f2937;
+  line-height: 1.6;
   background: #f9fafb;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   /* Note: Fixed the background syntax (removed nested background-color and incorrect URL string) */
