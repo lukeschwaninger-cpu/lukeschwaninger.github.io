@@ -157,8 +157,8 @@ footer {
 
 .project-card img {
   width: 100%;
-  max-width: 420px;
-  height: 300px;
+  max-width: 520px;
+  height: 400px;
   object-fit: cover;
   border-radius: 8px;
   margin: 10px auto 0;
