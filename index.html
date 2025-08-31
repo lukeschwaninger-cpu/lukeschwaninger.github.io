@@ -1,12 +1,11 @@
-si<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Luke Schwaninger | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
     <h1>Luke Schwaninger</h1>
@@ -22,106 +21,88 @@ si<!DOCTYPE html>
 
   <main>
     <section id="about">
-  <h2>About Me</h2>
-  <div class="about-container">
-    <img src="about.jpg" alt="Profile photo of Luke Schwaninger" class="about-photo">
-    <div class="about-text">
-      <p>
-        I am a Mechanical Engineering student at the University of Nebraska–Lincoln 
-        (expected graduation May 2026), with research and engineering design experience 
-        spanning materials science, advanced manufacturing, and applied mechanics. 
-        My work has led to multiple peer-reviewed publications and practical industry solutions.
-      </p>
-    </div>
-  </div>
-</section>
+      <h2>About Me</h2>
+      <div class="about-container">
+        <img src="about.jpg" alt="Profile photo of Luke Schwaninger" class="about-photo">
+        <div class="about-text">
+          <p>
+            I am a Mechanical Engineering student at the University of Nebraska–Lincoln 
+            (expected graduation May 2026), with research and engineering design experience 
+            spanning materials science, advanced manufacturing, and applied mechanics. 
+            My work has led to multiple peer-reviewed publications and practical industry solutions.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section id="experience">
       <h2>Engineering Experience</h2>
       <ul>
         <li>
-          <strong>Nano Engineering Research Assistant</strong> – Nano-Engineering Research Core Facility (Jan 2024 – Present)  
+          <strong>Nano Engineering Research Assistant</strong> – Nano-Engineering Research Core Facility (Jan 2024 – Present)
           <p>Contributed data and analysis to 3 peer-reviewed publications, developed Python scripts for data analysis, and presented research at professional symposiums.</p>
         </li>
         <li>
-          <strong>Design Engineering Intern</strong> – Kelley Engineered Equipment (May 2025 – Aug 2025)  
+          <strong>Design Engineering Intern</strong> – Kelley Engineered Equipment (May 2025 – Aug 2025)
           <p>Created SolidWorks models and drawings, assisted in moving projects from concept to fabrication, and gained hands-on shop experience in custom mining equipment.</p>
         </li>
         <li>
-          <strong>Statics Learning Assistant</strong> – UNL College of Engineering (Jan 2024 – May 2024)  
+          <strong>Statics Learning Assistant</strong> – UNL College of Engineering (Jan 2024 – May 2024)
           <p>Supported students in MECH 223 coursework through tutoring and problem-solving sessions.</p>
         </li>
       </ul>
     </section>
 
+    <!-- FIXED: single Research section (no nested duplicate sections) -->
     <section id="research">
       <h2>Research & Publications</h2>
+
       <h3>Grant-Funded Research</h3>
       <ul>
         <li><em>Nanoscale Investigation of Bone Tissue Near Lacunae in Type-1 Diabetic Postmenopausal Women</em> – 2-year project analyzing diabetic bone tissue using advanced nanocharacterization techniques.</li>
         <li><em>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</em> – 1-year study investigating mechanical properties of 3D-printed NAB alloys, presented at the Summer Research Symposium.</li>
       </ul>
-      <section id="research">
+
       <h3>Highlighted Publications</h3>
       <ul>
         <li>
-          <em>
-            <a href="https://doi.org/10.1093/mam/ozaf048.153" target="_blank">
-              Nanoscale Properties of Cortical Bone Tissue within Peri-lacunar Regions
-            </a>
-          </em>
-          – *Microscopy and Microanalysis* (2025): Mapping peri-lacunar bone composition and mechanical properties in Type-1 diabetic postmenopausal women using nanoIR and nanoindentation.
+          <em><a href="https://doi.org/10.1093/mam/ozaf048.153" target="_blank">Nanoscale Properties of Cortical Bone Tissue within Peri-lacunar Regions</a></em> – <em>Microscopy and Microanalysis</em> (2025).
         </li>
         <li>
-          <em>
-            <a href="https://doi.org/10.2351/7.0001743" target="_blank">
-              Microstructural Investigation of Graphene Reinforced Nickel Aluminum Bronze Prepared via Laser Powder Bed Fusion
-            </a>
-          </em>
-          – *Journal of Laser Applications* (2025): Characterized additively manufactured NAB samples enhanced with graphene using nanoindentation, X-ray CT, SEM, and EBSD.
+          <em><a href="https://doi.org/10.2351/7.0001743" target="_blank">Microstructural Investigation of Graphene Reinforced Nickel Aluminum Bronze Prepared via Laser Powder Bed Fusion</a></em> – <em>Journal of Laser Applications</em> (2025).
         </li>
         <li>
-          <em>
-            <a href="https://doi.org/10.1093/mam/ozae044.611" target="_blank">
-              Additively Manufactured Nickel Aluminum Bronze via Laser Powder Bed Fusion Shows Excellent Anticorrosion
-            </a>
-          </em>
-          – *Microscopy and Microanalysis* (2024): Characterized additively manufactured NAB samples with enhanced properties using nanoindentation and SEM.
+          <em><a href="https://doi.org/10.1093/mam/ozae044.611" target="_blank">Additively Manufactured Nickel Aluminum Bronze via Laser Powder Bed Fusion Shows Excellent Anticorrosion</a></em> – <em>Microscopy and Microanalysis</em> (2024).
         </li>
       </ul>
     </section>
 
+    <!-- Projects: two poster cards (images displayed inline) -->
+    <section id="projects">
+      <h2>Design Portfolio</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</h3>
+          <p>
+            Designed and implemented experimental methodology to investigate microstructural 
+            and mechanical properties of additively manufactured (AM) NAB. Developed SEM/EDX, 
+            nanoindentation, and sample prep workflows to compare AM vs. traditional cast NAB alloys. 
+            Results showed improved hardness and modulus in AM NAB for maritime applications.
+          </p>
+          <img src="AM Poster.jpg" alt="AM NAB Poster">
+        </div>
 
-<!-- New Projects Section -->
-<section id="projects">
-  <h2>Design Portfolio</h2>
-  <div class="project-grid">
-    
-    <div class="project-card">
-      <h3>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</h3>
-      <p>
-        Designed and implemented experimental methodology to investigate microstructural 
-        and mechanical properties of additively manufactured (AM) NAB. Developed SEM/EDX, 
-        nanoindentation, and sample prep workflows to compare AM vs. traditional cast NAB alloys. 
-        Results showed improved hardness and modulus in AM NAB for maritime applications.
-      </p>
-      <img src="AM Poster.jpg" alt="Microscale Characterization of AM NAB Poster" style="width:100%; border-radius: 8px; margin-top: 10px;">
-    </div>
-
-    <div class="project-card">
-      <h3>Nanoscale Changes in Bone Composition and Mechanics at Peri-Lacunar Regions</h3>
-      <p>
-        Designed nanoscale experimental workflows integrating LSM, AFM-IR, and nanoindentation 
-        to study bone fragility in postmenopausal women with Type 1 diabetes. Findings revealed 
-        nanoscale mechanical and compositional changes linked to osteocyte microenvironments, 
-        providing new insights into diabetic bone health.
-      </p>
-      <img src="Bones Poster.jpg" alt="Bone Composition and Mechanics Poster" style="width:100%; border-radius: 8px; margin-top: 10px;">
-    </div>
-
-  </div>
-</section>
-
+        <div class="project-card">
+          <h3>Nanoscale Changes in Bone Composition and Mechanics at Peri-Lacunar Regions</h3>
+          <p>
+            Designed nanoscale experimental workflows integrating LSM, AFM-IR, and nanoindentation 
+            to study bone fragility in postmenopausal women with Type 1 diabetes. Findings revealed 
+            nanoscale mechanical and compositional changes linked to osteocyte microenvironments.
+          </p>
+          <img src="Bones Poster.jpg" alt="Bones Poster">
+        </div>
+      </div>
+    </section>
 
     <section id="contact">
       <h2>Contact</h2>
@@ -134,59 +115,71 @@ si<!DOCTYPE html>
   <footer>
     <p>&copy; 2025 Luke Schwaninger</p>
   </footer>
-  
-<script>
-  let lastScroll = 0;
-  const header = document.querySelector("header");
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
+  <!-- Modal for enlarging images -->
+  <div id="imgModal" class="modal" aria-hidden="true">
+    <button class="modal-close" aria-label="Close image">&times;</button>
+    <img class="modal-content" id="modalImage" alt="">
+  </div>
 
-    if (currentScroll > lastScroll && currentScroll > 80) {
-      // scrolling down → hide header
-      header.classList.add("header-hidden");
-    } else {
-      // scrolling up → show header
-      header.classList.remove("header-hidden");
+  <!-- Script: wait for DOMContentLoaded to attach handlers safely -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    /* ===== header hide on scroll ===== */
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+    if (header) {
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.scrollY || window.pageYOffset;
+        if (currentScroll > lastScroll && currentScroll > 80) {
+          header.classList.add('header-hidden');
+        } else {
+          header.classList.remove('header-hidden');
+        }
+        lastScroll = currentScroll;
+      });
     }
 
-    lastScroll = currentScroll;
-  });
-  </script>
-  
-<!-- Modal for enlarging images -->
-<div id="imgModal" class="modal">
-  <span class="modal-close">&times;</span>
-  <img class="modal-content" id="modalImage">
-</div>
+    /* ===== modal (lightbox) ===== */
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = modal ? modal.querySelector('.modal-close') : null;
 
-<script>
-  // Get modal elements
-  const modal = document.getElementById("imgModal");
-  const modalImg = document.getElementById("modalImage");
-  const closeBtn = document.querySelector(".modal-close");
+    function openModal(src, alt) {
+      if (!modal) return;
+      modalImg.src = src;
+      modalImg.alt = alt || '';
+      modal.setAttribute('aria-hidden', 'false');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
+    function closeModal() {
+      if (!modal) return;
+      modal.setAttribute('aria-hidden', 'true');
+      modal.style.display = 'none';
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
 
-  // Attach click listeners to all project images
-  document.querySelectorAll(".project-card img").forEach(img => {
-    img.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
+    // attach to all project images
+    document.querySelectorAll('.project-card img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => openModal(img.src, img.alt));
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    // close on ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
   });
-
-  // Close modal on X click
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  // Close modal on outside click
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-</script>
-
-  
+  </script>
 </body>
 </html>
