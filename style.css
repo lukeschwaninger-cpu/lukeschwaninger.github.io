@@ -53,7 +53,8 @@ h2 {
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: #f9fafb;
+  background: #e5e7eb;  /* light gray */
+  color: #1f2937;   /* darker gray*/
   backdrop-filter: blur(6px);
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
