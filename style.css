@@ -9,9 +9,8 @@ html, body { height: 100%; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background: #f9fafb;
-  background-image: url("background-color: #5c008a;
-background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */");
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  /* Note: Fixed the background syntax (removed nested background-color and incorrect URL string) */
 }
 
 /* ===== Section Styling with Alternating Backgrounds ===== */
@@ -44,7 +43,6 @@ h2 {
   margin-bottom: 1rem;
   font-weight: 700;
 }
-
 
 /* ===========================
    Header / Nav
@@ -230,7 +228,8 @@ footer {
 .social-card iframe,
 .social-card img,
 .social-card blockquote,
-.social-card .instagram-media {
+.social-card .instagram-media,
+.social-card .strava-embed-placeholder {
   width: 100% !important;
   height: 100% !important;
   max-width: 100% !important;
@@ -272,6 +271,25 @@ footer {
 .social-card iframe[src*="linkedin.com"] {
   width: 100% !important;
   height: 100% !important;
+  object-fit: cover !important;
+  border: 0 !important;
+}
+
+/* Strava embed specifics (override inline rules from Strava's script) */
+.social-card .strava-embed-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden !important;
+}
+.social-card .strava-embed-placeholder iframe,
+.social-card .strava-embed-placeholder * {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   object-fit: cover !important;
   border: 0 !important;
 }
