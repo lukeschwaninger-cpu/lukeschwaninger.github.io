@@ -11,7 +11,7 @@ body {
   color: #1f2937;
   line-height: 1.6;
   background-color: white; /* Use background-color instead of shorthand to avoid conflict */
-  background-image: url("asfalt-light.png");
+  background-image: url("cartographer.png");
   background-repeat: repeat; /* Optional: ensures the pattern repeats like the original */
 }
 
