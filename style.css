@@ -86,12 +86,13 @@ footer {
 /* ===========================
    About section
    =========================== */
-.about-section {
+.about-container {
   display: flex;
   align-items: center;
   gap: 2rem; /* space between photo and text */
 }
-.about-text { flex: 1; }
+.about-text { flex: 1; 
+}
 .about-photo {
   width: 250px;
   height: 250px;
