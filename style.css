@@ -123,6 +123,19 @@ footer {
 }
 .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
 
+.project-card img {
+  width: 100%;
+  max-width: 420px;   /* keeps it aligned with your social card width */
+  height: 300px;      /* or 500px if you want taller, like your social posts */
+  object-fit: cover;  /* crops to fit without stretching */
+  border-radius: 8px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* ===========================
    ---- SOCIAL PAGE OVERRIDES ----
    Fixed rectangles: 420px x 500px
