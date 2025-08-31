@@ -1,35 +1,43 @@
-/* Global */
+/* ===========================
+   Global / Typography
+   =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  color: #2a2a2a;
-  background: #f8f9fa;
-  line-height: 1.7;
-  padding-top: 70px;
+  color: #1f2937;
+  background: #f5f7fa;
+  line-height: 1.6;
+  padding-top: 70px; /* offset for sticky header */
 }
 
-/* Header */
+/* ===========================
+   Header / Nav
+   =========================== */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: #ffffffee; /* translucent white */
+  background: #ffffffee;
   backdrop-filter: blur(6px);
   border-bottom: 1px solid #e5e7eb;
   z-index: 1000;
   text-align: center;
-  padding: 14px 12px;
+  padding: 16px 12px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 header h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #1e3a8a; /* steel/navy accent */
-  margin-bottom: 4px;
+  color: #1e3a8a; /* strong navy accent */
+  margin-bottom: 6px;
 }
 header nav a {
   color: #374151;
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   transition: color 0.2s;
 }
@@ -42,28 +50,38 @@ header nav a::after {
   bottom: -4px; left: 0;
   width: 0%; height: 2px;
   background: #1e3a8a;
-  transition: width 0.3s;
+  transition: width 0.3s ease;
 }
 header nav a:hover::after {
   width: 100%;
 }
 header.header-hidden { transform: translateY(-100%); opacity: 0; }
 
-/* Sections */
+/* ===========================
+   Page Layout
+   =========================== */
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Sections (cards) */
 section {
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
   transition: transform .15s ease, box-shadow .15s ease;
 }
 section:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.12);
 }
+
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: #1e3a8a;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -71,30 +89,46 @@ h2 {
   padding-left: 10px;
 }
 
-/* About */
+/* ===========================
+   About Section
+   =========================== */
 .about-container {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 .about-photo {
-  width: 320px; height: 320px;
-  border-radius: 16px;
+  width: 350px; height: 350px;
   object-fit: cover;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-.about-text { flex: 1; font-size: 1rem; }
-
-/* Cards (Projects & Social) */
-.project-card, .social-card {
-  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+.about-text { flex: 1; }
+
+/* Mobile stack */
+@media (max-width: 768px) {
+  .about-container { flex-direction: column; text-align: center; }
+  .about-photo { width: 100%; height: auto; }
+}
+
+/* ===========================
+   Projects / Cards
+   =========================== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.6rem;
+}
+.project-card {
+  padding: 1.2rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
   transition: transform .15s ease, box-shadow .15s ease;
 }
-.project-card:hover, .social-card:hover {
+.project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.1);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
 }
 .project-card img {
   width: 100%; max-width: 420px; height: 280px;
@@ -108,7 +142,9 @@ h2 {
   transform: scale(1.03);
 }
 
-/* Footer */
+/* ===========================
+   Footer
+   =========================== */
 footer {
   text-align: center;
   margin: 2rem 0;
