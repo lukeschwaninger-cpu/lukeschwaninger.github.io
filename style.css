@@ -5,13 +5,47 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
+/* ===== Global Background with Subtle Geometric Pattern ===== */
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: #2a2a2a;
-  background: #f8f9fa;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #1f2937;
+  background: linear-gradient(135deg, #f9fafb 25%, #f3f4f6 25%, #f3f4f6 50%, #f9fafb 50%, #f9fafb 75%, #f3f4f6 75%, #f3f4f6);
+  background-size: 40px 40px; /* subtle light gray grid */
   line-height: 1.6;
-  padding-top: 70px; /* offset for sticky header */
+  padding-top: 70px; /* sticky header space */
 }
+
+/* ===== Section Styling with Alternating Backgrounds ===== */
+section {
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+  transition: transform .12s ease, box-shadow .12s ease;
+  border-left: 6px solid #1e3a8a; /* accent bar */
+}
+
+/* alternate backgrounds: white + light gray */
+section:nth-of-type(odd) {
+  background: #ffffff;
+}
+section:nth-of-type(even) {
+  background: #f9fafb;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+/* ===== Section Titles ===== */
+h2 {
+  font-size: 1.25rem;
+  color: #1e3a8a; /* accent navy */
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
 
 /* ===========================
    Header / Nav
