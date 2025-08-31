@@ -6,7 +6,6 @@
   <title>Luke Schwaninger | Social</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header>
     <h1>What Have I Been Up To?</h1>
@@ -16,15 +15,11 @@
     </nav>
   </header>
 
-  <!-- Use a dedicated "social-main" so we can make this page wider than other pages if desired -->
   <main class="social-main">
     <section>
       <h2>Latest Updates</h2>
-
-      <!-- GRID container: items will sit side-by-side until they must wrap -->
       <div class="social-grid">
-
-        <!-- LinkedIn embed: NOTE we removed the width attribute so CSS controls sizing -->
+        <!-- LinkedIn embed -->
         <div class="social-card">
           <iframe
             src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
@@ -53,49 +48,27 @@
 
         <!-- Strava embed #1 -->
         <div class="social-card">
-          <iframe
-            height="454"
-            width="300"
-            frameborder="0"
-            allowtransparency="true"
-            scrolling="no"
-            data-embed-type="activity" 
-            data-embed-id="15574240396" 
-            data-style="standard" 
-            data-from-embed="false">
-          ></iframe>
+          <div class="strava-embed-placeholder"
+               data-embed-type="activity"
+               data-embed-id="15574240396"
+               data-style="standard">
+          </div>
         </div>
-        <script src="https://strava-embeds.com/embed.js">
-        </script>
 
         <!-- Strava embed #2 -->
         <div class="social-card">
-          <iframe
-            height="454"
-            width="300"
-            frameborder="0"
-            allowtransparency="true"
-            scrolling="no"
-            data-embed-type="activity" 
-            data-embed-id="15507294269" 
-            data-style="standard" 
-            data-from-embed="false">
-          ></iframe>
+          <div class="strava-embed-placeholder"
+               data-embed-type="activity"
+               data-embed-id="15507294269"
+               data-style="standard">
+          </div>
         </div>
-        <script src="https://strava-embeds.com/embed.js">
-        </script>
-        
-        <!-- Example fallback screenshot card (optional) -->
-        <!--
-        <div class="social-card">
-          <img src="linkedin-post.png" alt="Screenshot of LinkedIn post" />
-        </div>
-        -->
+      </div>
 
-      </div> <!-- /.social-grid -->
-
-      <!-- Instagram embed script (keeps the blockquotes converting into embeds) -->
+      <!-- Instagram embed script -->
       <script async src="//www.instagram.com/embed.js"></script>
+      <!-- Strava embed script (single instance) -->
+      <script async src="https://strava-embeds.com/embed.js"></script>
     </section>
   </main>
 
@@ -103,24 +76,19 @@
     <p>&copy; 2025 Luke Schwaninger</p>
   </footer>
 
-<script>
-let lastScroll = 0;
-const header = document.querySelector("header");
+  <script>
+    let lastScroll = 0;
+    const header = document.querySelector("header");
 
-window.addEventListener("scroll", () => {
-  const currentScroll = window.scrollY;
-
-  if (currentScroll > lastScroll && currentScroll > 80) {
-    // scrolling down → hide header
-    header.classList.add("header-hidden");
-  } else {
-    // scrolling up → show header
-    header.classList.remove("header-hidden");
-  }
-
-  lastScroll = currentScroll;
-});
-</script>
-  
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        header.classList.add("header-hidden");
+      } else {
+        header.classList.remove("header-hidden");
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
 </body>
 </html>
