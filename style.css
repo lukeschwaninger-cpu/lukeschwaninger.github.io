@@ -10,8 +10,10 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: #1f2937;
   line-height: 1.6;
-  background: #f9fafb;
+  background-color: #f9fafb; /* Use background-color instead of shorthand to avoid conflict */
   background-image: url("asfalt-light.png");
+  background-repeat: repeat; /* Optional: ensures the pattern repeats like the original */
+}
 
 /* ===== Section Styling with Alternating Backgrounds ===== */
 section {
