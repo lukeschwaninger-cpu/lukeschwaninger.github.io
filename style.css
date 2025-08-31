@@ -7,8 +7,11 @@
 html, body { height: 100%; }
 /* ===== Global Background with Subtle Geometric Pattern ===== */
 body {
+  font-family: 'Inter', system-ui, sans-serif;
   background: #f9fafb;
-  background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+  background-image: url("background-color: #5c008a;
+background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */");
 }
 
 /* ===== Section Styling with Alternating Backgrounds ===== */
