@@ -298,3 +298,45 @@ footer {
   color: #6b7280;
   font-size: 0.9rem;
 }
+
+/* ===========================
+   Books Page
+   =========================== */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.8rem;
+  justify-items: center;
+}
+
+.book-card {
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+.book-card img {
+  max-width: 180px;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.book-card img:hover {
+  transform: scale(1.05);
+}
+
+.book-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
