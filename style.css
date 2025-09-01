@@ -189,7 +189,7 @@ footer {
 
 /* ===========================
    ---- SOCIAL PAGE OVERRIDES ----
-   Fixed rectangles: 420px x 500px
+   Fixed rectangles: 420px x 550px
    =========================== */
 
 /* Wider stage for the social page */
@@ -211,6 +211,7 @@ footer {
 
 /* Fixed-size card: 420 x 550 */
 .social-card {
+  position: relative;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
@@ -228,6 +229,26 @@ footer {
   box-shadow: 0 12px 30px rgba(0,0,0,0.09); 
 }
 
+/* Shimmer loading placeholder */
+.social-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Hide shimmer once embed loads */
+.social-card.loaded::before {
+  display: none;
+}
+
 /* Force all embeds to fill the card area */
 .social-card iframe,
 .social-card img,
@@ -243,6 +264,15 @@ footer {
   display: block !important;
   border: 0 !important;
   object-fit: cover !important; /* crop to fill rectangle */
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.5s ease-in;
+}
+.social-card iframe.loaded,
+.social-card img.loaded,
+.social-card blockquote.loaded,
+.social-card .instagram-media.loaded,
+.social-card .strava-embed-placeholder.loaded {
+  opacity: 1;
 }
 
 /* Instagram embed specifics (override inline rules from their script) */
@@ -304,13 +334,8 @@ footer {
   .social-grid { gap: 1rem; }
   .social-card {
     width: 100%;
-    /* Preserve the 420x500 aspect ratio (~0.84) when width shrinks */
-    aspect-ratio: 420 / 500;
+    /* Preserve the 420x550 aspect ratio (~0.76) when width shrinks */
+    aspect-ratio: 420 / 550;
     height: auto;
   }
-}
-
-html {
-  scroll-padding-top: 45px; /* keeps sections below fixed header */
-  scroll-behavior: smooth;  /* makes nav clicks glide instead of jump */
 }
