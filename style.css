@@ -311,6 +311,6 @@ footer {
 }
 
 html {
-  scroll-padding-top: 90px; /* keeps sections below fixed header */
+  scroll-padding-top: 45px; /* keeps sections below fixed header */
   scroll-behavior: smooth;  /* makes nav clicks glide instead of jump */
 }
