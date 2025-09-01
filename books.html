@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Books | Luke Schwaninger</title>
+  <meta name="description" content="My favorite books I've read with links to buy on Amazon." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/books.html" />
+
+  <meta property="og:title" content="Books | Luke Schwaninger" />
+  <meta property="og:description" content="A list of my favorite books." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/books.html" />
+  <meta property="og:image" content="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/about.jpg" />
+  <meta property="og:site_name" content="Luke Schwaninger" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Books | Luke Schwaninger" />
+  <meta name="twitter:description" content="My favorite books." />
+  <meta name="twitter:image" content="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/about.jpg" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+<header>
+  <h1>Books I've Read</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="social.html">Social</a>
+    <a href="books.html" aria-current="page">Books</a>
+  </nav>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="social.html">Social</a>
+    <a href="books.html" aria-current="page">Books</a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>My Favorite Reads</h2>
+    <div class="book-grid">
+      
+      <!-- Blood and Thunder -->
+      <div class="book-card">
+        <a href="https://www.amazon.com/dp/1400031109" target="_blank" rel="noopener">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81XrFkR7g6L.jpg" alt="Blood and Thunder book cover">
+        </a>
+        <h3>Blood and Thunder</h3>
+      </div>
+
+      <!-- Born to Run -->
+      <div class="book-card">
+        <a href="https://www.amazon.com/dp/0307279189" target="_blank" rel="noopener">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/91WcWnTnG-L.jpg" alt="Born to Run book cover">
+        </a>
+        <h3>Born to Run</h3>
+      </div>
+
+      <!-- The Wager -->
+      <div class="book-card">
+        <a href="https://www.amazon.com/dp/0385534264" target="_blank" rel="noopener">
+          <img src="https://images-na.ssl-images-amazon.com/images/I/81c5R6V8TnL.jpg" alt="The Wager book cover">
+        </a>
+        <h3>The Wager</h3>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Luke Schwaninger</p>
+</footer>
+
+<script>
+  // Burger menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileNav.classList.toggle("show");
+  });
+</script>
+</body>
+</html>
