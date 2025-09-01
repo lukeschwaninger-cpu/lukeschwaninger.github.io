@@ -223,6 +223,13 @@ h2 {
 /* ===========================
    Social Page Embeds
    =========================== */
+.linkedin-card {
+  height: 550px; /* or taller, e.g. 600px */
+}
+
+.linkedin-card iframe {
+  height: 100%;
+}
 .social-main {
   max-width: 1500px;
   margin: 2.25rem auto;
