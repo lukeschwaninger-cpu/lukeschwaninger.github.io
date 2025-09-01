@@ -107,43 +107,60 @@
 <script src="https://strava-embeds.com/embed.js"></script>
 <script async src="https://www.instagram.com/embed.js"></script>
 
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 80) {
+      header.classList.add("header-hidden");
+    } else {
+      header.classList.remove("header-hidden");
+    }
+    lastScroll = currentScroll;
+  });
 
-  <script>
-    let lastScroll = 0;
-    const header = document.querySelector("header");
+  // Burger menu toggle
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileNav.classList.toggle("show");
+  });
 
-    window.addEventListener("scroll", () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 80) {
-        header.classList.add("header-hidden");
-      } else {
-        header.classList.remove("header-hidden");
-      }
-      lastScroll = currentScroll;
+  // Mark iframe embeds as loaded
+  document.querySelectorAll('.social-card iframe').forEach(frame => {
+    frame.addEventListener('load', () => {
+      frame.parentElement.classList.add('loaded');
     });
-    // Mark embeds as loaded when iframe finishes
-    document.querySelectorAll('.social-card iframe').forEach(frame => {
+  });
+
+  // Instagram: observe for blockquote injection
+  const instaObserver = new MutationObserver(() => {
+    document.querySelectorAll('.instagram-media').forEach(block => {
+      if (!block.classList.contains("loaded")) {
+        block.classList.add("loaded");
+      }
+    });
+  });
+  instaObserver.observe(document.body, { childList: true, subtree: true });
+
+  // Strava: wait for injected iframe
+  const stravaObserver = new MutationObserver(() => {
+    document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
       frame.addEventListener('load', () => {
         frame.parentElement.classList.add('loaded');
       });
     });
-  
-    // Instagram requires reprocess after script loads
-    window.addEventListener('load', () => {
-      if (window.instgrm) window.instgrm.Embeds.process();
-    });
-  
-    // Strava auto-injects iframe -> wait for it
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
-        frame.addEventListener('load', () => {
-          frame.parentElement.classList.add('loaded');
-        });
-      });
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+  });
+  stravaObserver.observe(document.body, { childList: true, subtree: true });
+
+  // Ensure Instagram script processes embeds again after load
+  window.addEventListener('load', () => {
+    if (window.instgrm) window.instgrm.Embeds.process();
+  });
+</script>
 
 
-  </script>
 </body>
 </html>
