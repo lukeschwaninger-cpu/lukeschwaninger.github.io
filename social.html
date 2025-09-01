@@ -121,6 +121,29 @@
       }
       lastScroll = currentScroll;
     });
+    // Mark embeds as loaded when iframe finishes
+    document.querySelectorAll('.social-card iframe').forEach(frame => {
+      frame.addEventListener('load', () => {
+        frame.parentElement.classList.add('loaded');
+      });
+    });
+  
+    // Instagram requires reprocess after script loads
+    window.addEventListener('load', () => {
+      if (window.instgrm) window.instgrm.Embeds.process();
+    });
+  
+    // Strava auto-injects iframe -> wait for it
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
+        frame.addEventListener('load', () => {
+          frame.parentElement.classList.add('loaded');
+        });
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+
   </script>
 </body>
 </html>
