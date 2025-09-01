@@ -242,6 +242,7 @@ h2 {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   padding: 0.75rem;
   width: 420px;
+  height: 520px;
   display: flex;
   justify-content: center;
   align-items: center;
