@@ -9,72 +9,43 @@ body {
   font-family: 'Inter', system-ui, sans-serif;
   color: #1f2937;
   line-height: 1.6;
-  background-color: white;
-  background-image: url("cartographer.png");
-  background-repeat: repeat;
+  background: white url("cartographer.png") repeat;
 }
 
 /* ===========================
-   Section Styling
-   =========================== */
-section {
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-  padding: 1.6rem;
-  margin-bottom: 1.6rem;
-  transition: transform .12s ease, box-shadow .12s ease;
-  border-left: 6px solid #1e3a8a;
-}
-section:nth-of-type(odd) { background: #ffffff; }
-section:nth-of-type(even) { background: #f9fafb; }
-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
-}
-h2 {
-  font-size: 1.3rem;
-  color: #1e3a8a;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  border-left: 4px solid #1e3a8a;
-  padding-left: 10px;
-}
-
-/* ===========================
-   Header / Navigation
+   Header / Nav
    =========================== */
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
   background: #e5e7eb;
-  color: #1f2937;
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #d1d5db;
   z-index: 1000;
+  text-align: center;
+  padding: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 header h1 {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #1e3a8a;
 }
 header nav {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: 1rem;
 }
 header nav a {
   color: #374151;
   text-decoration: none;
   font-weight: 600;
   position: relative;
-  transition: color 0.2s;
+  padding: 4px;
 }
-header nav a:hover { color: #1e3a8a; }
+header nav a:hover {
+  color: #1e3a8a;
+}
 header nav a::after {
   content: "";
   position: absolute;
@@ -86,63 +57,89 @@ header nav a::after {
 header nav a:hover::after { width: 100%; }
 header.header-hidden { transform: translateY(-100%); opacity: 0; }
 
-/* Hamburger Button */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  gap: 5px;
   cursor: pointer;
 }
 .hamburger span {
-  display: block;
+  width: 24px;
   height: 3px;
-  width: 100%;
-  background: #1f2937;
+  background: #1e3a8a;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
-/* Animate into X */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translateY(8px);
 }
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
+.hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translateY(-8px);
 }
 
-/* Mobile nav panel */
+/* Mobile nav */
 .mobile-nav {
   display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #f9fafb;
   flex-direction: column;
-  align-items: flex-start;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  border-radius: 0 0 8px 8px;
-  overflow: hidden;
+  background: #f9fafb;
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #d1d5db;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.mobile-nav.show {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
 }
 .mobile-nav a {
-  padding: 12px 20px;
-  width: 100%;
-  text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 0.5rem 0;
+  color: #374151;
+  text-decoration: none;
+  font-weight: 600;
 }
-.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: #1e3a8a; }
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  header nav { display: none; }
+  .hamburger { display: flex; }
+}
 
 /* ===========================
-   Page Layout
+   Sections
    =========================== */
 main {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
-  padding-top: 90px; /* adjust for header height */
+  padding-top: 90px;
+}
+section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+  border-left: 6px solid #1e3a8a;
+}
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+}
+h2 {
+  font-size: 1.3rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  border-left: 4px solid #1e3a8a;
+  padding-left: 10px;
 }
 
 /* ===========================
@@ -166,7 +163,7 @@ main {
 }
 
 /* ===========================
-   Projects / Cards
+   Project Cards
    =========================== */
 .project-grid {
   display: grid;
@@ -193,49 +190,38 @@ main {
   transition: transform 0.3s ease;
   cursor: zoom-in;
 }
-.project-card img:hover {
-  transform: scale(1.03);
-}
+.project-card img:hover { transform: scale(1.03); }
 
-/* Modal for enlarged project images */
+/* ===========================
+   Modal (for images)
+   =========================== */
 .modal {
   display: none;
   position: fixed;
   z-index: 2000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85);
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.75);
   justify-content: center;
   align-items: center;
 }
-.modal img {
+.modal-content {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 .modal-close {
   position: absolute;
   top: 20px; right: 30px;
   font-size: 2rem;
   color: white;
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
 }
 
 /* ===========================
-   Footer
-   =========================== */
-footer {
-  text-align: center;
-  margin: 2rem 0;
-  color: #6b7280;
-  font-size: 0.9rem;
-}
-
-/* ===========================
-   Social Page Overrides
+   Social Page Embeds
    =========================== */
 .social-main {
   max-width: 1500px;
@@ -248,76 +234,48 @@ footer {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
-  align-items: stretch;
 }
 .social-card {
   position: relative;
-  background: #ffffff;
+  background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   padding: 0.75rem;
-  overflow: hidden;
+  width: 420px;
+  height: 550px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 420px;
-  height: 550px;
-  transition: transform .12s ease, box-shadow .12s ease;
+  overflow: hidden;
 }
-.social-card:hover { 
-  transform: translateY(-4px); 
-  box-shadow: 0 12px 30px rgba(0,0,0,0.09); 
-}
-/* Shimmer placeholder */
-.social-card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-.social-card.loaded::before { display: none; }
 .social-card iframe,
-.social-card img,
 .social-card blockquote,
-.social-card .instagram-media,
 .social-card .strava-embed-placeholder {
   width: 100% !important;
   height: 100% !important;
-  display: block !important;
   border: 0 !important;
-  object-fit: cover !important;
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
-.social-card iframe.loaded,
-.social-card img.loaded,
-.social-card blockquote.loaded,
-.social-card .instagram-media.loaded,
-.social-card .strava-embed-placeholder.loaded {
+.social-card.loaded iframe,
+.social-card.loaded blockquote,
+.social-card.loaded .strava-embed-placeholder {
   opacity: 1;
 }
-.social-card .instagram-media { margin: 0 !important; padding: 0 !important; }
-.social-card .instagram-media img { object-fit: cover !important; }
-.social-card iframe[src*="linkedin.com"] { border: 0 !important; }
+@media (max-width: 480px) {
+  .social-card {
+    width: 100%;
+    aspect-ratio: 420 / 550;
+    height: auto;
+  }
+}
 
 /* ===========================
-   Responsive Tweaks
+   Footer
    =========================== */
-@media (max-width: 768px) {
-  header nav { display: none; }
-  .hamburger { display: flex; }
-  .mobile-nav.show { display: flex; }
-  header h1 { font-size: 1.3rem; }
-}
-@media (max-width: 480px) {
-  header { padding: 12px 16px; }
-  header h1 { font-size: 1.1rem; }
-  .social-card { aspect-ratio: 420 / 550; height: auto; width: 100%; }
+footer {
+  text-align: center;
+  margin: 2rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
 }
