@@ -98,7 +98,7 @@ main {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
-  padding-top: 80px; /* Adjusted to account for header height (approx. 54px + padding) */
+  padding-top: 90px; /* Adjusted to account for header height (approx. 54px + padding) */
 }
 
 /* Sections (cards) */
