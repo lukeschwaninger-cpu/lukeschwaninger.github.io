@@ -21,8 +21,6 @@
   <meta name="twitter:description" content="Recent activity across platforms." />
   <meta name="twitter:image" content="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/about.jpg" />
 
-  <!-- (Optional) You can leave the same JSON-LD Person block here or omit to reduce duplication. -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
@@ -30,7 +28,7 @@
 </head>
 
 <body>
-  <header>
+<header>
   <h1>What Have I Been Up To?</h1>
   <nav>
     <a href="index.html">Home</a>
@@ -45,10 +43,11 @@
   </div>
 </header>
 
- <main class="social-main">
+<main class="social-main">
   <section>
     <h2>Latest Updates</h2>
     <div class="social-grid">
+
       <!-- LinkedIn embed -->
       <div class="social-card">
         <iframe
@@ -64,7 +63,9 @@
       <div class="social-card">
         <blockquote class="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/"
-          data-instgrm-version="14">
+          data-instgrm-version="14"
+          style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+          <a href="https://www.instagram.com/p/DNt-b5E4hrC/" target="_blank"></a>
         </blockquote>
       </div>
 
@@ -72,7 +73,9 @@
       <div class="social-card">
         <blockquote class="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/"
-          data-instgrm-version="14">
+          data-instgrm-version="14"
+          style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+          <a href="https://www.instagram.com/p/DHjxbgbSDd7/" target="_blank"></a>
         </blockquote>
       </div>
 
@@ -110,11 +113,12 @@
   <p>&copy; 2025 Luke Schwaninger</p>
 </footer>
 
-<!-- ✅ Moved scripts to bottom of body -->
+<!-- Scripts -->
 <script src="https://strava-embeds.com/embed.js"></script>
 <script async src="https://www.instagram.com/embed.js"></script>
 
 <script>
+  // Header scroll hide
   let lastScroll = 0;
   const header = document.querySelector("header");
   window.addEventListener("scroll", () => {
@@ -142,16 +146,6 @@
     });
   });
 
-  // Instagram: observe for blockquote injection
-  const instaObserver = new MutationObserver(() => {
-    document.querySelectorAll('.instagram-media').forEach(block => {
-      if (!block.classList.contains("loaded")) {
-        block.classList.add("loaded");
-      }
-    });
-  });
-  instaObserver.observe(document.body, { childList: true, subtree: true });
-
   // Strava: wait for injected iframe
   const stravaObserver = new MutationObserver(() => {
     document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
@@ -162,12 +156,10 @@
   });
   stravaObserver.observe(document.body, { childList: true, subtree: true });
 
-  // Ensure Instagram script processes embeds again after load
+  // Re-process Instagram embeds after load
   window.addEventListener('load', () => {
     if (window.instgrm) window.instgrm.Embeds.process();
   });
 </script>
-
-
 </body>
 </html>
