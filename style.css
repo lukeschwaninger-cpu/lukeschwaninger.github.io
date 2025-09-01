@@ -197,6 +197,7 @@ footer {
   max-width: 1500px;
   margin: 2.25rem auto;
   padding: 0 2rem;
+  padding-top: 90px;
 }
 
 /* Use flex so cards keep exact pixel size and wrap cleanly */
