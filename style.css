@@ -209,7 +209,7 @@ footer {
   align-items: stretch;
 }
 
-/* Fixed-size card: 420 x 500 */
+/* Fixed-size card: 420 x 550 */
 .social-card {
   background: #ffffff;
   border-radius: 12px;
@@ -220,7 +220,7 @@ footer {
   justify-content: center;
   align-items: center;
   width: 420px;     /* fixed width */
-  height: 500px;    /* fixed height */
+  height: 550px;    /* fixed height */
   transition: transform .12s ease, box-shadow .12s ease;
 }
 .social-card:hover { 
