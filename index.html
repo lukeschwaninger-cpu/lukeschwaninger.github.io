@@ -7,8 +7,6 @@
   <title>Luke Schwaninger | Mechanical Engineering Portfolio</title>
   <meta name="description" content="Portfolio of Luke Schwaninger, Mechanical Engineering student at UNL. Research and design in materials science, advanced manufacturing, and applied mechanics." />
 
-  <meta name="google-site-verification" content="RCaIKB6K_gSbYh5LjXBZaI02pLHAMt7udmHU01T-T8w" />
-  
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/" />
 
@@ -26,38 +24,7 @@
   <meta name="twitter:description" content="Explore my engineering projects, research, and professional experience." />
   <meta name="twitter:image" content="https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/about.jpg" />
 
-  <!-- Google Search Console verification (replace CONTENT with actual token from Search Console) -->
-  <meta name="google-site-verification" content="PASTE_VERIFICATION_TOKEN_HERE" />
-
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Luke Schwaninger",
-    "url": "https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/",
-    "jobTitle": "Mechanical Engineering Student",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "University of Nebraska–Lincoln"
-    },
-    "image": "https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/about.jpg",
-    "sameAs": [
-      "https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME",
-      "https://github.com/lukeschwaninger-cpu"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Luke Schwaninger | Portfolio",
-    "url": "https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/"
-  }
-  </script>
-
-  <!-- Preconnects help performance -->
+  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
@@ -65,8 +32,13 @@
 </head>
 
 <body>
+  <!-- =========================== -->
+  <!-- Header with responsive nav -->
+  <!-- =========================== -->
   <header>
     <h1>Luke Schwaninger</h1>
+
+    <!-- Desktop nav -->
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -75,8 +47,28 @@
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Mobile nav (hidden until burger click) -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="social.html">Social</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
   </header>
 
+  <!-- =========================== -->
+  <!-- Main Content -->
+  <!-- =========================== -->
   <main>
     <section id="about">
       <h2>About Me</h2>
@@ -93,8 +85,7 @@
       </div>
     </section>
 
-
-      <!-- Projects: two poster cards (images displayed inline) -->
+    <!-- Projects -->
     <section id="projects">
       <h2>Design Portfolio</h2>
       <div class="project-grid">
@@ -121,30 +112,23 @@
       </div>
     </section>
 
-    <!-- FIXED: single Research section (no nested duplicate sections) -->
+    <!-- Research -->
     <section id="research">
       <h2>Research & Publications</h2>
-
       <h3>Grant-Funded Research</h3>
       <ul>
         <li><em>Nanoscale Investigation of Bone Tissue Near Lacunae in Type-1 Diabetic Postmenopausal Women</em> – 2-year project analyzing diabetic bone tissue using advanced nanocharacterization techniques.</li>
         <li><em>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</em> – 1-year study investigating mechanical properties of 3D-printed NAB alloys, presented at the Summer Research Symposium.</li>
       </ul>
-      
       <h3>Highlighted Publications</h3>
       <ul>
-        <li>
-          <em><a href="https://doi.org/10.1093/mam/ozaf048.153" target="_blank">Nanoscale Properties of Cortical Bone Tissue within Peri-lacunar Regions</a></em> – <em>Microscopy and Microanalysis</em> (2025).
-        </li>
-        <li>
-          <em><a href="https://doi.org/10.2351/7.0001743" target="_blank">Microstructural Investigation of Graphene Reinforced Nickel Aluminum Bronze Prepared via Laser Powder Bed Fusion</a></em> – <em>Journal of Laser Applications</em> (2025).
-        </li>
-        <li>
-          <em><a href="https://doi.org/10.1093/mam/ozae044.611" target="_blank">Additively Manufactured Nickel Aluminum Bronze via Laser Powder Bed Fusion Shows Excellent Anticorrosion</a></em> – <em>Microscopy and Microanalysis</em> (2024).
-        </li>
+        <li><em><a href="https://doi.org/10.1093/mam/ozaf048.153" target="_blank">Nanoscale Properties of Cortical Bone Tissue within Peri-lacunar Regions</a></em> – <em>Microscopy and Microanalysis</em> (2025).</li>
+        <li><em><a href="https://doi.org/10.2351/7.0001743" target="_blank">Microstructural Investigation of Graphene Reinforced Nickel Aluminum Bronze Prepared via Laser Powder Bed Fusion</a></em> – <em>Journal of Laser Applications</em> (2025).</li>
+        <li><em><a href="https://doi.org/10.1093/mam/ozae044.611" target="_blank">Additively Manufactured Nickel Aluminum Bronze via Laser Powder Bed Fusion Shows Excellent Anticorrosion</a></em> – <em>Microscopy and Microanalysis</em> (2024).</li>
       </ul>
     </section>
 
+    <!-- Experience -->
     <section id="experience">
       <h2>Engineering Experience</h2>
       <ul>
@@ -162,7 +146,8 @@
         </li>
       </ul>
     </section>
-    
+
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:luke.schwaninger@gmail.com">luke.schwaninger@gmail.com</a></p>
@@ -171,74 +156,80 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Luke Schwaninger</p>
   </footer>
 
-  <!-- Modal for enlarging images -->
+  <!-- Modal for enlarged images -->
   <div id="imgModal" class="modal" aria-hidden="true">
     <button class="modal-close" aria-label="Close image">&times;</button>
     <img class="modal-content" id="modalImage" alt="">
   </div>
 
-  <!-- Script: wait for DOMContentLoaded to attach handlers safely -->
+  <!-- =========================== -->
+  <!-- Scripts -->
+  <!-- =========================== -->
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    /* ===== header hide on scroll ===== */
-    const header = document.querySelector('header');
-    let lastScroll = 0;
-    if (header) {
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY || window.pageYOffset;
-        if (currentScroll > lastScroll && currentScroll > 80) {
-          header.classList.add('header-hidden');
-        } else {
-          header.classList.remove('header-hidden');
-        }
-        lastScroll = currentScroll;
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ===== header hide on scroll ===== */
+      const header = document.querySelector('header');
+      let lastScroll = 0;
+      if (header) {
+        window.addEventListener('scroll', () => {
+          const currentScroll = window.scrollY || window.pageYOffset;
+          if (currentScroll > lastScroll && currentScroll > 80) {
+            header.classList.add('header-hidden');
+          } else {
+            header.classList.remove('header-hidden');
+          }
+          lastScroll = currentScroll;
+        });
+      }
+
+      /* ===== hamburger menu ===== */
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileNav.classList.toggle('show');
       });
-    }
 
-    /* ===== modal (lightbox) ===== */
-    const modal = document.getElementById('imgModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeBtn = modal ? modal.querySelector('.modal-close') : null;
+      /* ===== modal (lightbox) ===== */
+      const modal = document.getElementById('imgModal');
+      const modalImg = document.getElementById('modalImage');
+      const closeBtn = modal ? modal.querySelector('.modal-close') : null;
 
-    function openModal(src, alt) {
-      if (!modal) return;
-      modalImg.src = src;
-      modalImg.alt = alt || '';
-      modal.setAttribute('aria-hidden', 'false');
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // prevent background scroll
-    }
-    function closeModal() {
-      if (!modal) return;
-      modal.setAttribute('aria-hidden', 'true');
-      modal.style.display = 'none';
-      modalImg.src = '';
-      document.body.style.overflow = '';
-    }
+      function openModal(src, alt) {
+        if (!modal) return;
+        modalImg.src = src;
+        modalImg.alt = alt || '';
+        modal.setAttribute('aria-hidden', 'false');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal() {
+        if (!modal) return;
+        modal.setAttribute('aria-hidden', 'true');
+        modal.style.display = 'none';
+        modalImg.src = '';
+        document.body.style.overflow = '';
+      }
 
-    // attach to all project images
-    document.querySelectorAll('.project-card img').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => openModal(img.src, img.alt));
-    });
-
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+      document.querySelectorAll('.project-card img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openModal(img.src, img.alt));
       });
-    }
-
-    // close on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) closeModal();
+        });
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
     });
-  });
   </script>
 </body>
 </html>
