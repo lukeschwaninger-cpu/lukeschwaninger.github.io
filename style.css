@@ -221,27 +221,10 @@ h2 {
 }
 
 /* ===========================
-   Social Page Embeds
+   Social Page Embeds (FIXED)
    =========================== */
-.linkedin-card {
-  height: 550px; /* or taller, e.g. 600px */
-}
 
-.linkedin-card iframe {
-  height: 100%;
-}
-.social-main {
-  max-width: 1500px;
-  margin: 2.25rem auto;
-  padding: 0 2rem;
-  padding-top: 90px;
-}
-.social-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
+/* Social card container */
 .social-card {
   position: relative;
   background: #fff;
@@ -249,45 +232,54 @@ h2 {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   padding: 0.75rem;
   width: 420px;
-  height: 520px;
+  min-height: 400px;   /* enough space for Instagram embed */
+  height: auto;        /* allow dynamic growth */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 }
 
-/* Remove opacity hiding for blockquote */
-.social-card iframe,
-.social-card .strava-embed-placeholder {
-  width: 100%;
+/* LinkedIn card sizing */
+.linkedin-card {
+  height: 550px;
+}
+.linkedin-card iframe {
   height: 100%;
+  width: 100%;
   border: 0;
+}
+
+/* Instagram embeds: always visible, dynamic height */
+.social-card blockquote.instagram-media,
+.social-card iframe[src*="instagram.com"] {
+  width: 100% !important;
+  max-width: 540px;
+  border: 0 !important;
+  margin: auto;
+  opacity: 1 !important;   /* don’t fade out Instagram */
+  height: auto !important;
+}
+
+/* Strava + LinkedIn fade in smoothly after load */
+.linkedin-card iframe,
+.strava-embed-placeholder iframe {
   opacity: 0;
   transition: opacity 0.5s ease-in;
 }
-
-/* Instagram blockquote = visible by default */
-.social-card blockquote.instagram-media {
-  width: 100% !important;
-  min-width: 326px;
-  max-width: 540px;
-  margin: auto;
-  border: 0 !important;
-  opacity: 1 !important;
-}
-
-/* Fade in only Strava + LinkedIn iframe */
 .social-card.loaded iframe,
-.social-card.loaded .strava-embed-placeholder {
+.social-card.loaded .strava-embed-placeholder iframe {
   opacity: 1;
 }
 
+/* Mobile adjustments */
 @media (max-width: 480px) {
   .social-card {
     width: 100%;
-    height: auto;
+    min-height: 300px;
   }
 }
+
 
 /* ===========================
    Footer
