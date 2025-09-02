@@ -178,6 +178,8 @@ h2 {
   margin: 1rem 0;
   border-radius: 8px;
   cursor: zoom-in;
+  image-rendering: -webkit-optimize-contrast;
+  object-fit: contain; /* Ensures image fits without distortion */
 }
 
 /* ===========================
