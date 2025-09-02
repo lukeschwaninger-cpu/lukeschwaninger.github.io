@@ -364,16 +364,6 @@ footer {
 .book-description { font-size: 0.85rem; color: #6b7280; margin-top: 0.5rem; }
 
 /* ===========================
-   Custom 404 Page
-   =========================== */
-.not-found {
-  text-align: center;
-  padding: 2rem;
-}
-.not-found h1 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
-.not-found a { color: var(--secondary); text-decoration: none; font-weight: 600; }
-
-/* ===========================
    Contact Form
    =========================== */
 .contact-form {
@@ -401,3 +391,8 @@ footer {
   font-weight: 600;
 }
 .contact-form .btn:hover { background: #0f766e; }
+
+.contact-text {
+  margin-bottom: 2rem; /* Adjust this value (e.g., 1.5rem, 3rem) for desired spacing */
+  text-align: center; /* Centers the resume button for consistency */
+}
