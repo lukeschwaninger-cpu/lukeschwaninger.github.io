@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
+  --header-height: 5rem; /* Define header height */
   --bg-primary: #f9fafb; /* Off-white background */
   --text-primary: #374151; /* Dark gray for text */
   --accent: #6b7280; /* Light gray for secondary text */
@@ -27,15 +28,17 @@ body {
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background-color: #e0e3e6; /* Slightly darker off-white fill */
-  border: 1px solid #d1d5db; /* Subtle border for box effect */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+  background-color: #e0e3e6;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   z-index: 1000;
-  padding: 1.5rem 2rem; /* Increased padding for a boxier feel */
+  padding: 1.5rem 2rem;
+  height: var(--header-height); /* Set explicit height */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+header.header-sticky { position: sticky; }
 header.header-sticky { position: sticky; }
 header h1 {
   font-family: 'Roboto', sans-serif;
@@ -118,7 +121,7 @@ header.header-hidden { transform: translateY(-100%); opacity: 0; }
    =========================== */
 main {
   max-width: 1200px;
-  margin: 2rem auto 2rem; /* Reduced from 4rem to 2rem */
+  margin: calc(var(--header-height) + 0.5rem) auto 2rem; /* Dynamic margin */
   padding: 0 2rem;
 }
 
