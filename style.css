@@ -172,6 +172,7 @@ h2 {
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
+/* Existing or updated .project-details img */
 .project-details img {
   width: 100%;
   max-width: 600px;
@@ -180,7 +181,22 @@ h2 {
   border-radius: 8px;
   cursor: zoom-in;
   image-rendering: -webkit-optimize-contrast;
-  object-fit: contain; /* Ensures image fits without distortion */
+  object-fit: contain;
+  transition: transform 0.3s ease, max-width 0.3s ease; /* Smooth transition for enlarge */
+}
+
+/* New class for enlarged state */
+.project-details img.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90vw; /* Limits to 90% of viewport width */
+  max-height: 90vh; /* Limits to 90% of viewport height */
+  z-index: 1000;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  cursor: zoom-out; /* Indicates click to revert */
 }
 
 /* ===========================
