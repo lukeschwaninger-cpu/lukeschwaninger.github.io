@@ -224,12 +224,27 @@ h2 {
    Social Page Embeds (FIXED)
    =========================== */
 
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+
 .social-card {
-  width: 420px;
-  height: 520px;   /* fixed height for all */
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  padding: 0.75rem;
+  width: 100%;          /* fills the grid column */
+  max-width: 420px;     /* but never larger than your design */
+  height: 520px;
   display: flex;
   justify-content: center;
-  align-items: stretch; /* let content fill vertically */
+  align-items: stretch;
+  overflow: hidden;
 }
 
 .social-card blockquote.instagram-media {
