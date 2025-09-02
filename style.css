@@ -225,25 +225,19 @@ h2 {
    =========================== */
 
 .social-card {
-  position: relative;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  padding: 0.75rem;
   width: 420px;
-  display: block;       /* not flex — let children size themselves */
-  overflow: hidden;
+  height: 520px;   /* fixed height for all */
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* let content fill vertically */
 }
 
-/* Allow iframe/blockquote/strava to expand fully */
-.social-card iframe,
 .social-card blockquote.instagram-media {
+  flex: 1;            /* stretch inside card */
   width: 100% !important;
-  max-width: 540px;
-  min-width: 326px;
-  margin: auto;
-  border: 0 !important;
+  height: 100% !important;
 }
+
 
 .linkedin-card iframe {
   height: 100%;
