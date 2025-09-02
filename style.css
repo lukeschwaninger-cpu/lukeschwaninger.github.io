@@ -224,7 +224,6 @@ h2 {
    Social Page Embeds (FIXED)
    =========================== */
 
-/* Remove fixed heights */
 .social-card {
   position: relative;
   background: #fff;
@@ -232,21 +231,18 @@ h2 {
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   padding: 0.75rem;
   width: 420px;
-  min-height: 100px; /* small buffer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;       /* not flex — let children size themselves */
   overflow: hidden;
 }
 
 /* Allow iframe/blockquote/strava to expand fully */
 .social-card iframe,
-.social-card blockquote.instagram-media,
-.social-card .strava-embed-placeholder {
+.social-card blockquote.instagram-media {
   width: 100% !important;
-  height: auto !important;
-  border: 0;
-  display: block;
+  max-width: 540px;
+  min-width: 326px;
+  margin: auto;
+  border: 0 !important;
 }
 
 .linkedin-card iframe {
