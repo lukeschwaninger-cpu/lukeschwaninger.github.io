@@ -117,15 +117,16 @@ header.header-hidden { transform: translateY(-100%); opacity: 0; }
    =========================== */
 main {
   max-width: 1200px;
-  margin: 4rem auto 2rem;
+  margin: 2rem auto 2rem; /* Reduced from 4rem to 2rem */
   padding: 0 2rem;
 }
+
+/* Replace or adjust in existing hero */
 .hero {
   min-height: 200px;
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0; /* Reduced from 2rem 0 to 1rem 0 */
   margin-bottom: 2rem;
-  background: none;
   border-bottom: 1px solid var(--border);
 }
 section {
