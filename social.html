@@ -124,7 +124,7 @@
 <script async src="https://www.instagram.com/embed.js"></script>
 
 <script>
-  // Header scroll hide
+  // ===== Header hide on scroll =====
   let lastScroll = 0;
   const header = document.querySelector("header");
   window.addEventListener("scroll", () => {
@@ -137,7 +137,7 @@
     lastScroll = currentScroll;
   });
 
-  // Burger menu toggle
+  // ===== Burger menu =====
   const hamburger = document.getElementById("hamburger");
   const mobileNav = document.getElementById("mobileNav");
   hamburger.addEventListener("click", () => {
@@ -145,27 +145,42 @@
     mobileNav.classList.toggle("show");
   });
 
-  // Mark iframe embeds as loaded
+  // ===== Mark LinkedIn/Strava iframes as loaded =====
   document.querySelectorAll('.social-card iframe').forEach(frame => {
     frame.addEventListener('load', () => {
       frame.parentElement.classList.add('loaded');
     });
   });
 
-  // Strava: wait for injected iframe
+  // ===== Strava observer (wait for auto-injected iframe) =====
   const stravaObserver = new MutationObserver(() => {
     document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
-      frame.addEventListener('load', () => {
-        frame.parentElement.classList.add('loaded');
-      });
+      if (!frame.dataset.processed) {
+        frame.dataset.processed = "true";
+        frame.addEventListener('load', () => {
+          frame.parentElement.classList.add('loaded');
+        });
+      }
     });
   });
   stravaObserver.observe(document.body, { childList: true, subtree: true });
 
-  // Re-process Instagram embeds after load
-  window.addEventListener('load', () => {
-    if (window.instgrm) window.instgrm.Embeds.process();
+  // ===== Instagram embed handling =====
+  function processInstagram() {
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+    }
+  }
+
+  // Run once after window load
+  window.addEventListener("load", processInstagram);
+
+  // Re-run if new Instagram blockquotes appear
+  const instaObserver = new MutationObserver(() => {
+    processInstagram();
   });
+  instaObserver.observe(document.body, { childList: true, subtree: true });
 </script>
+
 </body>
 </html>
