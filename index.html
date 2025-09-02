@@ -30,14 +30,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <style>
+    :root { --primary: #1e3a8a; --secondary: #14b8a6; }
+  </style>
 </head>
-
 
 <body>
   <!-- =========================== -->
   <!-- Header with responsive nav -->
   <!-- =========================== -->
-  <header>
+  <header class="header-sticky">
     <h1>Luke Schwaninger</h1>
 
     <!-- Desktop nav -->
@@ -74,6 +76,13 @@
   <!-- Main Content -->
   <!-- =========================== -->
   <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="about.jpeg" alt="Profile photo of Luke Schwaninger" class="about-photo" loading="lazy">
+      <h2 class="about-tagline">Innovating in Materials Science and Engineering</h2>
+    </section>
+
+    <!-- About -->
     <section id="about">
       <h2>About Me</h2>
       <div class="about-container">
@@ -95,23 +104,25 @@
       <div class="project-grid">
         <div class="project-card">
           <h3>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</h3>
-          <p>
+          <p class="project-details">
             Designed and implemented experimental methodology to investigate microstructural 
             and mechanical properties of additively manufactured (AM) NAB. Developed SEM/EDX, 
             nanoindentation, and sample prep workflows to compare AM vs. traditional cast NAB alloys. 
             Results showed improved hardness and modulus in AM NAB for maritime applications.
           </p>
           <img src="AM Poster.jpg" alt="AM NAB Poster">
+          <a href="resume.pdf" class="resume-btn">Download Resume</a>
         </div>
 
         <div class="project-card">
           <h3>Nanoscale Changes in Bone Composition and Mechanics at Peri-Lacunar Regions</h3>
-          <p>
+          <p class="project-details">
             Designed nanoscale experimental workflows integrating LSM, AFM-IR, and nanoindentation 
             to study bone fragility in postmenopausal women with Type 1 diabetes. Findings revealed 
             nanoscale mechanical and compositional changes linked to osteocyte microenvironments.
           </p>
           <img src="Bones Poster.jpg" alt="Bones Poster">
+          <a href="resume.pdf" class="resume-btn">Download Resume</a>
         </div>
       </div>
     </section>
@@ -154,6 +165,12 @@
     <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
+      <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
+        <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
+        <textarea name="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
       <p>Email: <a href="mailto:luke.schwaninger@gmail.com">luke.schwaninger@gmail.com</a></p>
       <p>Phone: 402-637-7808</p>
       <p>Location: Lincoln, NE</p>
@@ -163,6 +180,10 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Luke Schwaninger</p>
+    <div class="footer-links">
+      <a href="/404.html" class="not-found">Lost? Find Your Way</a>
+    </div>
+    <p class="backup-note">Last backup: [Date]</p>
   </footer>
 
   <!-- Modal for enlarged images -->
@@ -208,14 +229,14 @@
         if (!modal) return;
         modalImg.src = src;
         modalImg.alt = alt || '';
+        modal.classList.add('modal-open');
         modal.setAttribute('aria-hidden', 'false');
-        modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       }
       function closeModal() {
         if (!modal) return;
+        modal.classList.remove('modal-open');
         modal.setAttribute('aria-hidden', 'true');
-        modal.style.display = 'none';
         modalImg.src = '';
         document.body.style.overflow = '';
       }
