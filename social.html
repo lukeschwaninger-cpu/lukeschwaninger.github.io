@@ -180,6 +180,22 @@
     processInstagram();
   });
   instaObserver.observe(document.body, { childList: true, subtree: true });
+
+  // ===== LinkedIn auto-resize =====
+document.querySelectorAll('.linkedin-card iframe').forEach(iframe => {
+  iframe.addEventListener('load', () => {
+    try {
+      // Resize to match LinkedIn's internal content height
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      if (doc && doc.body && doc.body.scrollHeight) {
+        iframe.style.height = doc.body.scrollHeight + "px";
+      }
+    } catch (e) {
+      // Cross-origin protection: fallback to fixed height
+      iframe.style.height = "550px";
+    }
+  });
+});
 </script>
 
 </body>
