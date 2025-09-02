@@ -27,10 +27,11 @@ body {
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  background: FF0000;
-  border-bottom: #e5e8eb;
+  background-color: #e0e3e6; /* Slightly darker off-white fill */
+  border: 1px solid #d1d5db; /* Subtle border for box effect */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
   z-index: 1000;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem; /* Increased padding for a boxier feel */
   display: flex;
   justify-content: space-between;
   align-items: center;
