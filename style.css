@@ -393,6 +393,6 @@ footer {
 .contact-form .btn:hover { background: #0f766e; }
 
 .contact-text {
-  margin-bottom: 2rem; /* Adjust this value (e.g., 1.5rem, 3rem) for desired spacing */
+  margin-bottom: 3rem; /* Adjust this value (e.g., 1.5rem, 3rem) for desired spacing */
   text-align: center; /* Centers the resume button for consistency */
 }
