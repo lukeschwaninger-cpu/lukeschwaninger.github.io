@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lukeschwaninger-cpu.github.io/lukeschwaninger.github.io/sitemap.xml
+Sitemap: https://lukeschwaninger.com/sitemap.xml
+
