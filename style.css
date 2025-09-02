@@ -287,17 +287,43 @@ footer {
 /* ===========================
    Books Page
    =========================== */
+/* Replace or adjust in existing .book-details section */
 .book-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default for small screens */
+  gap: 2rem;
   margin-bottom: 1.5rem;
 }
 .book-details img {
   max-width: 200px;
-  height: auto;
+  height: 300px; /* Fixed height for uniformity */
+  object-fit: cover; /* Crops to fit while preserving aspect ratio */
   margin: 1rem 0;
   border-radius: 8px;
 }
-.book-details h3 { font-size: 1.2rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem; }
-.book-description { font-size: 0.9rem; color: var(--accent); }
+.book-details h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.book-description {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* Media Queries for Side-by-Side */
+@media (min-width: 640px) {
+  .book-details {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets and up */
+  }
+}
+
+@media (min-width: 1024px) {
+  .book-details {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on desktops */
+  }
+}
 
 /* ===========================
    Contact Form
