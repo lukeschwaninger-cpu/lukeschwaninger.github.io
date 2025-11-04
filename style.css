@@ -38,7 +38,7 @@ body {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  border-radius: 8px; /* square shape with slightly rounded corners */
+  border-radius: 8px; /* square with rounded corners */
   border: 2px solid var(--border);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.25rem;
@@ -94,7 +94,31 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Button style */
+/* ===============================
+   About Me Card (Featured)
+   =============================== */
+.card.about {
+  grid-column: 1 / -1; /* span full width */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 2.5rem;
+}
+
+.card.about h2 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.card.about p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* ===============================
+   Button
+   =============================== */
 .btn {
   display: inline-block;
   background-color: var(--text-primary);
@@ -152,5 +176,9 @@ footer {
 
   .card {
     padding: 1.5rem;
+  }
+
+  .card.about {
+    padding: 2rem;
   }
 }
