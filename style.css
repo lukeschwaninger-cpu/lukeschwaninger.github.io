@@ -9,6 +9,17 @@
   --highlight: #3b82f6;
 }
 
+a {
+  color: var(--highlight);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
