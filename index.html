@@ -1,80 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luke Schwaninger</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
 <body>
-  <!-- Hero / Intro -->
-  <header class="hero">
-    <img src="about.jpeg" alt="Luke Schwaninger" class="profile-photo" />
+  <section class="hero">
+    <img src="images/profile.jpg" alt="Luke Schwaninger" class="profile-photo">
     <div class="hero-text">
       <h1>Luke Schwaninger</h1>
-      <p>Engineer • Designer • Researcher</p>
+      <p>Engineer | Researcher | Designer</p>
     </div>
-  </header>
+  </section>
 
-  <!-- Cards Container -->
-  <main class="card-grid">
+  <!-- About Me section sits alone -->
+  <section class="about-section">
+    <div class="card about">
+      <h2>About Me</h2>
+      <p>
+        I’m an engineer and researcher focused on mechanical systems, product design, and applied materials.
+        My approach blends technical precision with curiosity-driven exploration — whether I’m prototyping
+        a new concept, analyzing data, or studying material behavior under stress.
+      </p>
+    </div>
+  </section>
 
-    <!-- About Me -->
-    <section class="card" id="about">
-      <div class="card about">
-        <h2>About Me</h2>
-        <p>I’m an engineer with diverse experience from bones research to custom engineered equipment who enjoys designing, analyzing, and building practical things. Most of my work focuses on problem-identification and analytical solutions through design, materials, and research. I like when ideas turn into something useful or well made.</p>
-        <a href="about.html" class="btn">Read More</a>
-      </div>
-    </section>
-
-    <!-- Design Portfolio -->
-    <section class="card" id="design">
-      <h2>Design Projects</h2>
-      <p>Explore my industrial, mechanical, and conceptual design projects.</p>
-      <a href="design.html" class="btn">View Projects</a>
-    </section>
-
-    <!-- Research Portfolio -->
-    <section class="card" id="research">
+  <!-- Other cards continue below -->
+  <section class="card-grid">
+    <div class="card">
       <h2>Research</h2>
-      <p>See my work in materials science, microscopy, and quantitative analysis.</p>
-      <a href="research.html" class="btn">Explore Research</a>
-    </section>
+      <p>Exploring bone microstructure, fatigue, and advanced imaging techniques.</p>
+      <a href="research.html" class="btn">View Research</a>
+    </div>
 
-    <!-- Experience -->
-    <section class="card" id="experience">
+    <div class="card">
+      <h2>Design Projects</h2>
+      <p>From concept sketches to mechanical prototypes and functional builds.</p>
+      <a href="projects.html" class="btn">View Projects</a>
+    </div>
+
+    <div class="card">
       <h2>Experience</h2>
-      <p>Professional and academic experience summaries.</p>
-      <a href="experience.html" class="btn">View Details</a>
-    </section>
+      <p>Hands-on work across engineering, testing, and product development.</p>
+      <a href="experience.html" class="btn">View Experience</a>
+    </div>
 
-    <!-- Books -->
-    <section class="card" id="books">
+    <div class="card">
       <h2>Books</h2>
-      <p>Written works, publications, or reading recommendations.</p>
-      <a href="books.html" class="btn">Read More</a>
-    </section>
+      <p>My collection of technical reads and design references.</p>
+      <a href="books.html" class="btn">View Books</a>
+    </div>
 
-    <!-- Social / Contact -->
-    <section class="card" id="social">
+    <div class="card">
       <h2>Social</h2>
-      <p>Connect with me online — social links and contact info below.</p>
-      <a href="social.html" class="btn">Get in Touch</a>
-    </section>
+      <p>Connect with me on platforms where I share updates and ideas.</p>
+      <a href="social.html" class="btn">Connect</a>
+    </div>
+  </section>
 
-  </main>
-
-  <!-- Footer / Social -->
   <footer>
     <p>© 2025 Luke Schwaninger</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/luke-schwaninger/" target="_blank">LinkedIn</a>
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-      <a href="mailto:lukeschwaninger@gmail.com">Email</a>
-    </div>
   </footer>
 </body>
-</html>
