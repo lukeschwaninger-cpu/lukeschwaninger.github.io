@@ -1,268 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>Luke Schwaninger | Engineering Portfolio</title>
-  <meta name="description" content="Luke Schwaninger, Mechanical Engineering student at UNL. Research and design in materials science, advanced manufacturing, and applied mechanics." />
-  <meta name="author" content="Luke Schwaninger" />
-
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://lukeschwaninger.com/" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Luke Schwaninger | Engineering Portfolio" />
-  <meta property="og:description" content="Explore my engineering projects, research, and professional experience." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lukeschwaninger.com/" />
-  <meta property="og:image" content="https://lukeschwaninger.com/about.jpg" />
-  <meta property="og:site_name" content="Luke Schwaninger" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Luke Schwaninger | Engineering Portfolio" />
-  <meta name="twitter:description" content="Explore my engineering projects, research, and professional experience." />
-  <meta name="twitter:image" content="https://lukeschwaninger.com/about.jpg" />
-
-  <!-- Fonts & CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <style>
-    :root { --primary: #1e3a8a; --secondary: #14b8a6; }
-  </style>
-</head>
-
 <body>
-  <!-- =========================== -->
-  <!-- Header with responsive nav -->
-  <!-- =========================== -->
-  <header class="header-sticky">
+  <!-- Hero / Intro -->
+  <header>
     <h1>Luke Schwaninger</h1>
-
-    <!-- Desktop nav -->
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#experience">Experience</a>
-      <a href="books.html">Books</a>
-      <a href="social.html">Social</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- Hamburger for mobile -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- Mobile nav (hidden until burger click) -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research</a>
-      <a href="#experience">Experience</a>
-      <a href="books.html">Books</a>
-      <a href="social.html">Social</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <p>Engineer | Designer | Researcher</p>
   </header>
 
-  <!-- =========================== -->
-  <!-- Main Content -->
-  <!-- =========================== -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <h2 class="about-tagline">Innovating in Materials Science and Engineering</h2>
-      <img src="about.jpeg" alt="Profile photo of Luke Schwaninger" class="about-photo" loading="lazy">
-    </section>
+  <!-- Cards Container -->
+  <main class="card-grid">
 
-    <!-- About -->
-    <section id="about">
+    <!-- About Me -->
+    <section class="card" id="about">
       <h2>About Me</h2>
-      <div class="about-container">
-        <div class="about-text">
-          <p>
-            I am a Mechanical Engineering student at the University of Nebraska–Lincoln 
-            (expected graduation May 2026), with research and engineering design experience 
-            spanning materials science, advanced manufacturing, and applied mechanics. 
-            My work has led to multiple peer-reviewed publications and practical industry solutions.
-          </p>
-        </div>
-      </div>
+      <p>A short summary about your background and interests.</p>
+      <a href="about.html" class="btn">Read More</a>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Design Portfolio</h2>
-      <div class="project-details">
-        <h3>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</h3>
-        <p>
-          Designed and implemented experimental methodology to investigate microstructural 
-          and mechanical properties of additively manufactured (AM) NAB. Developed SEM/EDX, 
-          nanoindentation, and sample prep workflows to compare AM vs. traditional cast NAB alloys. 
-          Results showed improved hardness and modulus in AM NAB for maritime applications.
-        </p>
-        <img src="AM Poster.jpg" alt="AM NAB Poster" loading="lazy">
-      </div>
-      <div class="project-details">
-        <h3>Nanoscale Changes in Bone Composition and Mechanics at Peri-Lacunar Regions</h3>
-        <p>
-          Designed nanoscale experimental workflows integrating LSM, AFM-IR, and nanoindentation 
-          to study bone fragility in postmenopausal women with Type 1 diabetes. Findings revealed 
-          nanoscale mechanical and compositional changes linked to osteocyte microenvironments.
-        </p>
-        <img src="Bones Poster.jpg" alt="Bones Poster" loading="lazy">
-      </div>
+    <!-- Design Portfolio -->
+    <section class="card" id="design">
+      <h2>Design Projects</h2>
+      <p>Explore my industrial, mechanical, and conceptual design projects.</p>
+      <a href="design.html" class="btn">View Projects</a>
     </section>
 
-    <!-- Research -->
-    <section id="research">
-      <h2>Research & Publications</h2>
-      <h3>Grant-Funded Research</h3>
-      <ul>
-        <li><em>Nanoscale Investigation of Bone Tissue Near Lacunae in Type-1 Diabetic Postmenopausal Women</em> – 2-year project analyzing diabetic bone tissue using advanced nanocharacterization techniques.</li>
-        <li><em>Microscale Characterization of Additively Manufactured Nickel Aluminum Bronze</em> – 1-year study investigating mechanical properties of 3D-printed NAB alloys, presented at the Summer Research Symposium.</li>
-      </ul>
-      <h3>Highlighted Publications</h3>
-      <ul>
-        <li><em><a href="https://doi.org/10.1093/mam/ozaf048.153" target="_blank">Nanoscale Properties of Cortical Bone Tissue within Peri-lacunar Regions</a></em> – <em>Microscopy and Microanalysis</em> (2025).</li>
-        <li><em><a href="https://doi.org/10.2351/7.0001743" target="_blank">Microstructural Investigation of Graphene Reinforced Nickel Aluminum Bronze Prepared via Laser Powder Bed Fusion</a></em> – <em>Journal of Laser Applications</em> (2025).</li>
-        <li><em><a href="https://doi.org/10.1093/mam/ozae044.611" target="_blank">Additively Manufactured Nickel Aluminum Bronze via Laser Powder Bed Fusion Shows Excellent Anticorrosion</a></em> – <em>Microscopy and Microanalysis</em> (2024).</li>
-      </ul>
-      <h3>My Google Scholar Page</h3>
-      <ul>
-        <li><em><a href="https://scholar.google.com/citations?hl=en&user=l2x2SMoAAAAJ&view_op=list_works&gmla=AH8HC4zOGuwKg-2h4vfWmXMOLDq_12mlkfagjfKfjsCmjqKGtbTOLT19iW5hwOhcxGnHOjUA-PhpRFnr6GtyTRoY" target="_blank">Luke's Profile</a></em></li>
-      </ul>
+    <!-- Research Portfolio -->
+    <section class="card" id="research">
+      <h2>Research</h2>
+      <p>See my work in materials science, microscopy, and quantitative analysis.</p>
+      <a href="research.html" class="btn">Explore Research</a>
     </section>
 
     <!-- Experience -->
-    <section id="experience">
-      <h2>Engineering Experience</h2>
-      <ul>
-        <li>
-          <strong>Nano Engineering Research Assistant</strong> – Nano-Engineering Research Core Facility (Jan 2024 – Present)
-          <p>Contributed data and analysis to 3 peer-reviewed publications, developed Python scripts for data analysis, and presented research at professional symposiums.</p>
-        </li>
-        <li>
-          <strong>Design Engineering Intern</strong> – Kelley Engineered Equipment (May 2025 – Aug 2025)
-          <p>Created SolidWorks models and drawings, assisted in moving projects from concept to fabrication, and gained hands-on shop experience in custom mining equipment.</p>
-        </li>
-        <li>
-          <strong>Statics Learning Assistant</strong> – UNL College of Engineering (Jan 2024 – May 2024)
-          <p>Supported students in MECH 223 coursework through tutoring and problem-solving sessions.</p>
-        </li>
-      </ul>
+    <section class="card" id="experience">
+      <h2>Experience</h2>
+      <p>Professional and academic experience summaries.</p>
+      <a href="experience.html" class="btn">View Details</a>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <form class="contact-form" action="https://formspree.io/f/xwpnngjl" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
-        <input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
-        <textarea name="message" placeholder="Write a message or request my resume here!" required aria-label="Your Message"></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-      <p>Email: <a href="mailto:luke.schwaninger@gmail.com">luke.schwaninger@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/luke-schwaninger-b336642a1/">Luke Schwaninger</a></p>
-      <p>Location: Lincoln, NE</p>
+    <!-- Books -->
+    <section class="card" id="books">
+      <h2>Books</h2>
+      <p>Written works, publications, or reading recommendations.</p>
+      <a href="books.html" class="btn">Read More</a>
     </section>
+
+    <!-- Social / Contact -->
+    <section class="card" id="social">
+      <h2>Social</h2>
+      <p>Connect with me online — social links and contact info below.</p>
+      <a href="social.html" class="btn">Get in Touch</a>
+    </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- Footer / Social -->
   <footer>
-    <p>&copy; 2025 Luke Schwaninger</p>
-    <p>Please refrain from using or reproducing any of the website's content without first requesting my approval.</p>
+    <!-- your existing footer or social HTML from old index -->
   </footer>
-
-  <!-- Modal for enlarged images -->
-  <div id="imgModal" class="modal" aria-hidden="true">
-    <button class="modal-close" aria-label="Close image">&times;</button>
-    <img class="modal-content" id="modalImage" alt="">
-  </div>
-
-  <!-- =========================== -->
-  <!-- Scripts -->
-  <!-- =========================== -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      /* ===== header hide on scroll ===== */
-      const header = document.querySelector('header');
-      let lastScroll = 0;
-      if (header) {
-        window.addEventListener('scroll', () => {
-          const currentScroll = window.scrollY || window.pageYOffset;
-          if (currentScroll > lastScroll && currentScroll > 80) {
-            header.classList.add('header-hidden');
-          } else {
-            header.classList.remove('header-hidden');
-          }
-          lastScroll = currentScroll;
-        });
-      }
-
-      /* ===== hamburger menu ===== */
-      const hamburger = document.getElementById('hamburger');
-      const mobileNav = document.getElementById('mobileNav');
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        mobileNav.classList.toggle('show');
-      });
-
-      /* ===== modal (lightbox) ===== */
-      const modal = document.getElementById('imgModal');
-      const modalImg = document.getElementById('modalImage');
-      const closeBtn = modal ? modal.querySelector('.modal-close') : null;
-
-      function openModal(src, alt) {
-        if (!modal) return;
-        modalImg.src = src;
-        modalImg.alt = alt || '';
-        modal.classList.add('modal-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal() {
-        if (!modal) return;
-        modal.classList.remove('modal-open');
-        modal.setAttribute('aria-hidden', 'true');
-        modalImg.src = '';
-        document.body.style.overflow = '';
-      }
-
-      document.querySelectorAll('.project-card img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => openModal(img.src, img.alt));
-      });
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      if (modal) {
-        modal.addEventListener('click', (e) => {
-          if (e.target === modal) closeModal();
-        });
-      }
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-      });
-    });
-      document.addEventListener('DOMContentLoaded', () => {
-      const images = document.querySelectorAll('.project-details img');
-      images.forEach(img => {
-        img.addEventListener('click', () => {
-          img.classList.toggle('enlarged');
-          if (img.classList.contains('enlarged')) {
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-          } else {
-            document.body.style.overflow = ''; // Restore scrolling
-          }
-        });
-      });
-    });
-  </script>
 </body>
-</html>
