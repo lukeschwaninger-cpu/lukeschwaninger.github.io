@@ -3,10 +3,10 @@
    =============================== */
 :root {
   --bg-primary: #f9fafb;
-  --text-primary: #1f2937;
-  --accent: #6b7280;
+  --text-primary: #000000;
+  --accent: #000000;
   --border: #e5e7eb;
-  --highlight: #3b82f6;
+  --highlight: #000000;
 }
 
 * {
@@ -31,7 +31,12 @@ a {
   transition: color 0.2s ease;
 }
 
-a:hover {
+a:visited {
+  color: var(--text-primary);
+}
+
+a:hover,
+a:focus {
   color: var(--highlight);
   text-decoration: underline;
 }
@@ -215,19 +220,26 @@ a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 1 / 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .social-card iframe,
 .social-card embed,
 .social-card .post {
   width: 100%;
-  height: 100%;
   border: none;
-  object-fit: cover;
+  display: block;
+}
+
+.social-card blockquote {
+  width: 100%;
+  margin: 0;
+}
+
+.strava-embed-placeholder {
+  width: 100%;
+  display: block;
 }
 
 /* ===============================
