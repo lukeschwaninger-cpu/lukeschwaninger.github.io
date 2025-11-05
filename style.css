@@ -3,10 +3,10 @@
    =============================== */
 :root {
   --bg-primary: #f9fafb;
-  --text-primary: #add8e6;
-  --accent: #add8e6;
+  --text-primary: #1f2937;
+  --accent: #4b5563;
   --border: #e5e7eb;
-  --highlight: #add8e6;
+  --highlight: #2563eb;
 }
 
 * {
