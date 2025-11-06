@@ -3,182 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Social | Luke Schwaninger</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
-
 <body>
-<header>
-  <h1>Latest Updates</h1>
-</header>
+  <main class="social-main">
+    <header class="generic-header">
+      <h1>Latest Updates</h1>
+      <p>Selected activity from LinkedIn, Instagram, and Strava.</p>
+    </header>
 
-<main class="social-main">
-  <section>
-    <div class="social-grid">
+    <section>
+      <div class="social-grid">
+        <div class="social-card linkedin-card">
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
+            title="LinkedIn post"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
 
-      <!-- LinkedIn embed -->
-      <div class="social-card linkedin-card">
-        <iframe
-          src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
-          title="LinkedIn post"
-          frameborder="0"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <div class="social-card">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/"
+            data-instgrm-version="14"
+            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+            <a href="https://www.instagram.com/p/DNt-b5E4hrC/" target="_blank" rel="noopener"></a>
+          </blockquote>
+        </div>
+
+        <div class="social-card">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/"
+            data-instgrm-version="14"
+            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+            <a href="https://www.instagram.com/p/DHjxbgbSDd7/" target="_blank" rel="noopener"></a>
+          </blockquote>
+        </div>
+
+        <div class="social-card">
+          <blockquote class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/p/DQIF13IEiTo/"
+            data-instgrm-version="14"
+            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
+            <a href="https://www.instagram.com/p/DQIF13IEiTo/" target="_blank" rel="noopener"></a>
+          </blockquote>
+        </div>
+
+        <div class="social-card">
+          <div class="strava-embed-placeholder"
+               data-embed-type="activity"
+               data-embed-id="15574240396"
+               data-style="standard"
+               data-from-embed="false"></div>
+        </div>
+
+        <div class="social-card">
+          <div class="strava-embed-placeholder"
+               data-embed-type="activity"
+               data-embed-id="15507294269"
+               data-style="standard"
+               data-from-embed="false"></div>
+        </div>
+
+        <div class="social-card">
+          <div class="strava-embed-placeholder"
+               data-embed-type="activity"
+               data-embed-id="15493102061"
+               data-style="standard"
+               data-from-embed="false"></div>
+        </div>
       </div>
+    </section>
 
-      <!-- Instagram embed #1 -->
-      <div class="social-card">
-        <blockquote 
-          class="instagram-media" 
-          data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/"
-          data-instgrm-version="14"
-          style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-          <a href="https://www.instagram.com/p/DNt-b5E4hrC/" target="_blank"></a>
-        </blockquote>
-      </div>
+    <section class="return-section">
+      <a href="index.html" class="return-button">
+        <span class="return-icon" aria-hidden="true">&larr;</span>
+        <span class="return-text">Return Home</span>
+      </a>
+    </section>
+  </main>
 
-      <!-- Instagram embed #2 -->
-      <div class="social-card">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/"
-          data-instgrm-version="14"
-          style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-          <a href="https://www.instagram.com/p/DHjxbgbSDd7/" target="_blank"></a>
-        </blockquote>
-      </div>
+  <footer>
+    <p>&copy; 2025 Luke Schwaninger</p>
+  </footer>
 
-      <!-- Instagram embed #3 -->
-      <div class="social-card">
-        <blockquote class="instagram-media"
-          data-instgrm-permalink="https://www.instagram.com/p/DQIF13IEiTo/"
-          data-instgrm-version="14"
-          style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-          <a href="https://www.instagram.com/p/DQIF13IEiTo/" target="_blank"></a>
-        </blockquote>
-      </div>
+  <script src="https://strava-embeds.com/embed.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
 
-      <!-- Strava embed #1 -->
-      <div class="social-card">
-        <div class="strava-embed-placeholder" 
-             data-embed-type="activity" 
-             data-embed-id="15574240396" 
-             data-style="standard" 
-             data-from-embed="false"></div>
-      </div>
-
-      <!-- Strava embed #2 -->
-      <div class="social-card">
-        <div class="strava-embed-placeholder" 
-             data-embed-type="activity" 
-             data-embed-id="15507294269" 
-             data-style="standard" 
-             data-from-embed="false"></div>
-      </div>
-
-      <!-- Strava embed #3 -->
-      <div class="social-card">
-        <div class="strava-embed-placeholder"
-             data-embed-type="activity"
-             data-embed-id="15493102061"
-             data-style="standard"
-             data-from-embed="false"></div>
-      </div>
-    </div>
-  </section>
-  <section class="return-section">
-    <a href="index.html" class="return-button">
-      <span class="return-icon" aria-hidden="true">&larr;</span>
-      <span class="return-text">Return Home</span>
-    </a>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 Luke Schwaninger</p>
-</footer>
-
-<!-- Scripts -->
-<script src="https://strava-embeds.com/embed.js"></script>
-<script async src="https://www.instagram.com/embed.js"></script>
-
-<script>
-  // ===== Header hide on scroll =====
-  let lastScroll = 0;
-  const header = document.querySelector("header");
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-    if (currentScroll > lastScroll && currentScroll > 80) {
-      header.classList.add("header-hidden");
-    } else {
-      header.classList.remove("header-hidden");
-    }
-    lastScroll = currentScroll;
-  });
-
-  // ===== Burger menu =====
-  const hamburger = document.getElementById("hamburger");
-  const mobileNav = document.getElementById("mobileNav");
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    mobileNav.classList.toggle("show");
-  });
-
-  // ===== Mark LinkedIn/Strava iframes as loaded =====
-  document.querySelectorAll('.social-card iframe').forEach(frame => {
-    frame.addEventListener('load', () => {
-      frame.parentElement.classList.add('loaded');
-    });
-  });
-
-  // ===== Strava observer (wait for auto-injected iframe) =====
-  const stravaObserver = new MutationObserver(() => {
-    document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
-      if (!frame.dataset.processed) {
-        frame.dataset.processed = "true";
-        frame.addEventListener('load', () => {
-          frame.parentElement.classList.add('loaded');
-        });
+  <script>
+    const pageHeader = document.querySelector('header');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (pageHeader) {
+        if (currentScroll > lastScroll && currentScroll > 80) {
+          pageHeader.classList.add('header-hidden');
+        } else {
+          pageHeader.classList.remove('header-hidden');
+        }
       }
+      lastScroll = currentScroll;
     });
-  });
-  stravaObserver.observe(document.body, { childList: true, subtree: true });
 
-  // ===== Instagram embed handling =====
-  function processInstagram() {
-    if (window.instgrm && window.instgrm.Embeds) {
-      window.instgrm.Embeds.process();
-    }
-  }
+    document.querySelectorAll('.social-card iframe').forEach(frame => {
+      frame.addEventListener('load', () => {
+        frame.parentElement.classList.add('loaded');
+      });
+    });
 
-  // Run once after window load
-  window.addEventListener("load", processInstagram);
+    const stravaObserver = new MutationObserver(() => {
+      document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
+        if (!frame.dataset.processed) {
+          frame.dataset.processed = 'true';
+          frame.addEventListener('load', () => {
+            frame.parentElement.classList.add('loaded');
+          });
+        }
+      });
+    });
+    stravaObserver.observe(document.body, { childList: true, subtree: true });
 
-  // Re-run if new Instagram blockquotes appear
-  const instaObserver = new MutationObserver(() => {
-    processInstagram();
-  });
-  instaObserver.observe(document.body, { childList: true, subtree: true });
-
-  // ===== LinkedIn auto-resize =====
-document.querySelectorAll('.linkedin-card iframe').forEach(iframe => {
-  iframe.addEventListener('load', () => {
-    try {
-      // Resize to match LinkedIn's internal content height
-      const doc = iframe.contentDocument || iframe.contentWindow.document;
-      if (doc && doc.body && doc.body.scrollHeight) {
-        iframe.style.height = doc.body.scrollHeight + "px";
+    function processInstagram() {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
       }
-    } catch (e) {
-      // Cross-origin protection: fallback to fixed height
-      iframe.style.height = "550px";
     }
-  });
-});
-</script>
 
+    window.addEventListener('load', processInstagram);
+
+    const instaObserver = new MutationObserver(processInstagram);
+    instaObserver.observe(document.body, { childList: true, subtree: true });
+
+    document.querySelectorAll('.linkedin-card iframe').forEach(iframe => {
+      iframe.addEventListener('load', () => {
+        try {
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          if (doc && doc.body && doc.body.scrollHeight) {
+            iframe.style.height = doc.body.scrollHeight + 'px';
+          }
+        } catch (e) {
+          iframe.style.height = '550px';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
