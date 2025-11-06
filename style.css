@@ -35,6 +35,11 @@ a:visited {
   color: var(--text-primary);
 }
 
+a.btn:visited,
+.btn:visited {
+  color: #fff;
+}
+
 a:hover,
 a:focus {
   color: var(--highlight);
