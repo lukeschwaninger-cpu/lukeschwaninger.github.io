@@ -476,6 +476,7 @@ footer {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  align-items: start;
 }
 
 .social-card {
@@ -500,6 +501,7 @@ footer {
   width: 100%;
   border: none;
   display: block;
+  margin: 0 !important;
 }
 
 /* Experience */
