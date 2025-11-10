@@ -16,7 +16,7 @@
 
     <section>
       <div class="social-grid">
-        <div class="social-card linkedin-card">
+        <div class="social-card linkedin-card" data-aspect="1.65">
           <iframe
             src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
             title="LinkedIn post"
@@ -110,23 +110,99 @@
       lastScroll = currentScroll;
     });
 
-    document.querySelectorAll('.social-card iframe').forEach(frame => {
+    const processedFrames = new WeakSet();
+    const linkedinFrames = new Set();
+
+    function markCardLoaded(frame) {
+      const card = frame.closest('.social-card');
+      if (card) {
+        card.classList.add('loaded');
+      }
+    }
+
+    function resizeLinkedInFrame(frame) {
+      const container = frame.closest('.linkedin-card');
+      if (!container) return;
+
+      const ratio = Number.parseFloat(container.dataset.aspect) || 1.65;
+      const width = frame.offsetWidth;
+      if (!width || Number.isNaN(ratio)) return;
+
+      const height = Math.round(width * ratio);
+      frame.style.height = `${height}px`;
+    }
+
+    function processFrame(frame) {
+      if (processedFrames.has(frame)) return;
+      processedFrames.add(frame);
+
+      const isLinkedIn = frame.closest('.linkedin-card');
+      
       frame.addEventListener('load', () => {
-        frame.parentElement.classList.add('loaded');
+        if (isLinkedIn) {
+          resizeLinkedInFrame(frame);
+        }
+        markCardLoaded(frame);
       });
+      if (isLinkedIn) {
+        linkedinFrames.add(frame);
+        resizeLinkedInFrame(frame);
+      }
+    }
+
+    function scanForFrames() {
+      document.querySelectorAll('.social-card iframe').forEach(processFrame);
+    }
+
+    scanForFrames();
+
+    window.addEventListener('resize', () => {
+      linkedinFrames.forEach(resizeLinkedInFrame);
     });
 
-    const stravaObserver = new MutationObserver(() => {
-      document.querySelectorAll('.strava-embed-placeholder iframe').forEach(frame => {
-        if (!frame.dataset.processed) {
-          frame.dataset.processed = 'true';
-          frame.addEventListener('load', () => {
-            frame.parentElement.classList.add('loaded');
-          });
+    const embedObserver = new MutationObserver(scanForFrames);
+    embedObserver.observe(document.body, { childList: true, subtree: true });
+
+    function findFrameBySource(source) {
+      return Array.from(document.querySelectorAll('.social-card iframe'))
+        .find(frame => frame.contentWindow === source);
+    }
+
+    function applyEmbedHeight(frame, height) {
+      if (!frame) return;
+      const value = Number(height);
+      if (!Number.isFinite(value)) return;
+
+      frame.style.height = `${value}px`;
+      markCardLoaded(frame);
+    }
+
+    window.addEventListener('message', event => {
+      const frame = findFrameBySource(event.source);
+      if (!frame) return;
+
+      if (event.origin.includes('strava-embeds.com') && Array.isArray(event.data)) {
+        const [, type, value] = event.data;
+        if (type === 'BROADCAST_IFRAME_HEIGHT') {
+          applyEmbedHeight(frame, value);
         }
-      });
+      return;
+      }
+
+      if (event.origin.includes('instagram.com') && typeof event.data === 'string') {
+        const payload = event.data.trim();
+        if (!payload) return;
+
+        try {
+          const parsed = JSON.parse(payload);
+          if (parsed?.type === 'MEASURE' && parsed?.details?.height) {
+            applyEmbedHeight(frame, parsed.details.height);
+          }
+        } catch (error) {
+          // Ignore malformed messages
+        }
+      }
     });
-    stravaObserver.observe(document.body, { childList: true, subtree: true });
 
     function processInstagram() {
       if (window.instgrm && window.instgrm.Embeds) {
@@ -139,18 +215,6 @@
     const instaObserver = new MutationObserver(processInstagram);
     instaObserver.observe(document.body, { childList: true, subtree: true });
 
-    document.querySelectorAll('.linkedin-card iframe').forEach(iframe => {
-      iframe.addEventListener('load', () => {
-        try {
-          const doc = iframe.contentDocument || iframe.contentWindow.document;
-          if (doc && doc.body && doc.body.scrollHeight) {
-            iframe.style.height = doc.body.scrollHeight + 'px';
-          }
-        } catch (e) {
-          iframe.style.height = '550px';
-        }
-      });
-    });
   </script>
 </body>
 </html>
