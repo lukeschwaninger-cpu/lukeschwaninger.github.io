@@ -20,9 +20,9 @@
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  border-radius: 10%;
   background: rgba(255, 255, 255, 0.9);
   display: inline-flex;
   align-items: center;
@@ -32,8 +32,8 @@
 }
 
 .favicon-badge img {
-  width: 24px;
-  height: 24px;
+  width: 48px;
+  height: 48px;
 }
 
 body {
