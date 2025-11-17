@@ -24,7 +24,7 @@
   height: 60px;
   border-radius: 10%;
   background: rgba(255, 255, 255, 0.9);
-  display: inline-flex;
+  display: block;
   align-items: center;
   justify-content: center;
   box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12);
