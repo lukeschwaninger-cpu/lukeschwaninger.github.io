@@ -8,10 +8,29 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-<main class="books-main">
+  <span class="noise-overlay" aria-hidden="true"></span>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">LS</span>
+        <span class="brand-text">Luke Schwaninger</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="books.html" aria-current="page">Books</a></li>
+        <li><a href="social.html">Social</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="site-shell books-main">
     <header class="generic-header">
       <h1>Luke's Library</h1>
-      <p>A curated shelf of titles that shape my thinking about history, personal development, and health & wellness.</p>
+      <p>A curated shelf of titles that shape my thinking about history, personal development, and health &amp; wellness.</p>
     </header>
 
     <section class="books-grid">
@@ -37,70 +56,7 @@
         </a>
         <h3>The Wager</h3>
         <p>A tale of survival on a Royal Navy ship after wrecking near present-day Chile.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/1544507879" target="_blank" rel="noopener">
-          <img src="book 4.jpg" alt="Can't Hurt Me book cover" loading="lazy">
-        </a>
-        <h3>Can't Hurt Me</h3>
-        <p>A no-nonsense guide to resilience when the going gets tough.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/0671027034" target="_blank" rel="noopener">
-          <img src="book 5.jpg" alt="How to Win Friends &amp; Influence People book cover" loading="lazy">
-        </a>
-        <h3>How to Win Friends &amp; Influence People</h3>
-        <p>An investigation of social dynamics and practical psychology for professional growth.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/B0CZS9NPML" target="_blank" rel="noopener">
-          <img src="book 6.jpg" alt="Finding Ultra book cover" loading="lazy">
-        </a>
-        <h3>Finding Ultra</h3>
-        <p>An inspiring journey of transformation through ultra-endurance and disciplined training.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/0393338827" target="_blank" rel="noopener">
-          <img src="book 7.jpg" alt="The Big Short book cover" loading="lazy">
-        </a>
-        <h3>The Big Short</h3>
-        <p>A detailed analysis of the 2008 financial collapse, revealing the mechanics behind economic risk.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/B084B2X9TX" target="_blank" rel="noopener">
-          <img src="book 8.jpg" alt="" loading="lazy">
-        </a>
-        <h3>Your Next Five Moves</h3>
-        <p>Practical and effective guide for thinking more clearly and achieving your most audacious professional goals.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/B000165GNO" target="_blank" rel="noopener">
-          <img src="book 9.jpg" alt="" loading="lazy">
-        </a>
-        <h3>Zen Golf</h3>
-        <p>Zen Golf shapes ancient philosophies into new teachings, leading golfers to the effortless focus and unconditional confidence of being in "the zone."</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/B0007OB40E" target="_blank" rel="noopener">
-          <img src="book 10.jpg" alt="" loading="lazy">
-        </a>
-        <h3>The Four Agreements</h3>
-        <p>Based on ancient Toltec wisdom, the The Four Agreements offer a powerful code of conduct that can rapidly transform our lives to a new experience of freedom, true happiness, and love.</p>
-      </article>
-
-      <article class="book-card">
-        <a href="https://www.amazon.com/dp/B07Y29LZTP" target="_blank" rel="noopener">
-          <img src="book 11.jpg" alt="" loading="lazy">
-        </a>
-        <h3>The Circle of Fire</h3>
-        <p>In The Circle of Fire, best-selling author, don Miguel Ruiz, inspires us to enter into a new and loving relationship with ourselves, with our fellow humans, and with all of creation.</p>
+@@ -104,41 +123,41 @@
       </article>
 
       <article class="book-card">
@@ -126,7 +82,7 @@
         <h3>The Little Book of Incredibly Useful Knots</h3>
         <p>Knot-tying is an important skill, even essential if you are a boater, sailor, hiker, climber, or fishermen. Here in full color are the knots you need to know.</p>
       </article>
-      
+
     </section>
 
   <section class="return-section">
