@@ -8,12 +8,31 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-  <header class="sub-header">
-    <h1>Engineering Experience</h1>
-    <p>Professional, research, and teaching roles in engineering and design.</p>
+  <span class="noise-overlay" aria-hidden="true"></span>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">LS</span>
+        <span class="brand-text">Luke Schwaninger</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html" aria-current="page">Experience</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="social.html">Social</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="experience-main">
+  <main id="main" class="site-shell experience-main">
+    <section class="page-hero">
+      <h1>Engineering Experience</h1>
+      <p>Professional, research, and teaching roles in engineering and design.</p>
+    </section>
+
     <section class="experience-content">
       <ul class="experience-list">
         <li>
@@ -21,7 +40,7 @@
           <span class="experience-meta">Kelley Engineered Equipment · May 2025 – Aug 2025</span>
           <p>Created SolidWorks models and drawings, assisted in taking projects from concept to fabrication, and gained hands-on shop experience in custom mining equipment.</p>
         </li>
-        
+
         <li>
           <strong>Nano Engineering Research Assistant</strong>
           <span class="experience-meta">Nano-Engineering Research Core Facility · Jan 2024 – Present</span>
@@ -45,7 +64,6 @@
   </main>
 
   <footer>
-    
     <p>&copy; 2025 Luke Schwaninger</p>
   </footer>
 </body>
