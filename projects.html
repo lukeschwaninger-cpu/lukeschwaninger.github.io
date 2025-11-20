@@ -8,17 +8,39 @@
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-  <header class="sub-header">
-    <h1>Design Portfolio</h1>
-    <p>Upcoming builds and previous projects.</p>
+  <span class="noise-overlay" aria-hidden="true"></span>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">LS</span>
+        <span class="brand-text">Luke Schwaninger</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="social.html">Social</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="content-section narrow">
+  <main id="main" class="site-shell">
+    <section class="page-hero">
+      <h1>Design Portfolio</h1>
+      <p>Upcoming builds and previous projects.</p>
+    </section>
+
     <section aria-labelledby="cancrusher-announcement">
-      <article class="card project-announcement" id="cancrusher-announcement">
-        <header>
-          <h2>CanKrusher Project Announcement</h2>
-          <p class="project-status"><strong>Status:</strong> Coming Soon — December 2025.</p>
+      <article class="project-announcement" id="cancrusher-announcement">
+        <header class="section-header">
+          <div>
+            <h2>CanKrusher Project Announcement</h2>
+            <p class="project-status"><strong>Status:</strong> Coming Soon — December 2025.</p>
+          </div>
+          <span class="pill">Prototype</span>
         </header>
 
         <div class="project-media">
@@ -54,32 +76,34 @@
     </section>
 
     <section aria-labelledby="shotgun sling-announcement">
-      <article class="card project-announcement" id="shotgun sling-announcement">
-        <header>
-          <h2>Homemade Shotgun Sling</h2>
-          <p class="project-status">Making For Innovation Project</p>
+      <article class="project-announcement" id="shotgun sling-announcement">
+        <header class="section-header">
+          <div>
+            <h2>Homemade Shotgun Sling</h2>
+            <p class="project-status">Making For Innovation Project</p>
+          </div>
+          <span class="pill">Fabrication</span>
         </header>
 
         <div class="project-media">
-          <img src="sling.jpg" 
-               alt="Sling" 
-               class="feature-image" 
+          <img src="sling.jpg"
+               alt="Sling"
+               class="feature-image"
                loading="lazy">
-        
-          <a class="project-video-link" 
-             href="https://youtube.com/shorts/aT_45HEMh-A" 
-             target="_blank" 
+
+          <a class="project-video-link"
+             href="https://youtube.com/shorts/aT_45HEMh-A"
+             target="_blank"
              rel="noopener">
 
             <span class="sr-only">
               Watch the Shotgun Sling video on YouTube
             </span>
 
-            <!-- Correct thumbnail -->
-            <img src="https://img.youtube.com/vi/aT_45HEMh-A/hqdefault.jpg" 
-                 alt="Preview thumbnail for the Shotgun Sling video" 
+            <img src="https://img.youtube.com/vi/aT_45HEMh-A/hqdefault.jpg"
+                 alt="Preview thumbnail for the Shotgun Sling video"
                  loading="lazy">
-        
+
             <span class="video-badge" aria-hidden="true">
               <span class="video-icon">&#9658;</span>
               <span class="video-text">Watch</span>
@@ -94,32 +118,34 @@
     </section>
 
     <section aria-labelledby="3D print-announcement">
-      <article class="card project-announcement" id="3D print-announcement">
-        <header>
-          <h2>3D Printed Phone Holder for Car Vent</h2>
-          <p class="project-status">Making For Innovation Project</p>
+      <article class="project-announcement" id="3D print-announcement">
+        <header class="section-header">
+          <div>
+            <h2>3D Printed Phone Holder for Car Vent</h2>
+            <p class="project-status">Making For Innovation Project</p>
+          </div>
+          <span class="pill">3D Printing</span>
         </header>
-          
+
         <div class="project-media">
-          <img src="phonemount.PNG" 
-               alt="Phone Mount" 
-               class="feature-image" 
+          <img src="phonemount.PNG"
+               alt="Phone Mount"
+               class="feature-image"
                loading="lazy">
-        
-          <a class="project-video-link" 
-             href="https://youtube.com/shorts/4XUloo470TU" 
-             target="_blank" 
+
+          <a class="project-video-link"
+             href="https://youtube.com/shorts/4XUloo470TU"
+             target="_blank"
              rel="noopener">
 
             <span class="sr-only">
               Watch the 3D Print video on YouTube
             </span>
 
-            <!-- Correct thumbnail -->
-            <img src="https://img.youtube.com/vi/4XUloo470TU/hqdefault.jpg" 
-                 alt="Preview thumbnail for the 3D print video" 
+            <img src="https://img.youtube.com/vi/4XUloo470TU/hqdefault.jpg"
+                 alt="Preview thumbnail for the 3D print video"
                  loading="lazy">
-        
+
             <span class="video-badge" aria-hidden="true">
               <span class="video-icon">&#9658;</span>
               <span class="video-text">Watch</span>
@@ -134,23 +160,25 @@
     </section>
 
     <section aria-labelledby="Laser Engraved Desk Organizer">
-      <article class="card project-announcement" id="Laser Engraved Desk Organizer">
-        <header>
-          <h2>Laser Engraved Desk Organizer</h2>
-          <p class="project-status">Making For Innovation Project</p>
+      <article class="project-announcement" id="Laser Engraved Desk Organizer">
+        <header class="section-header">
+          <div>
+            <h2>Laser Engraved Desk Organizer</h2>
+            <p class="project-status">Making For Innovation Project</p>
+          </div>
+          <span class="pill">Laser Cut</span>
         </header>
-          
+
         <div class="project-media">
-          <img src="deskorganizer01.PNG" 
-               alt="Laser Engrave" 
-               class="feature-image" 
+          <img src="deskorganizer01.PNG"
+               alt="Laser Engrave"
+               class="feature-image"
                loading="lazy">
-          
-          <img src="deskorganizer.jpg" 
-               alt="Laser Engrave" 
-               class="feature-image" 
+
+          <img src="deskorganizer.jpg"
+               alt="Laser Engrave"
+               class="feature-image"
                loading="lazy">
-        
         </div>
 
         <p>
@@ -160,14 +188,17 @@
     </section>
 
     <section aria-labelledby="website-announcement">
-      <article class="card project-announcement" id="website-announcement">
-        <header>
-          <h2>New Website</h2>
-          <p class="project-status"><strong>Status:</strong> September 2025.</p>
+      <article class="project-announcement" id="website-announcement">
+        <header class="section-header">
+          <div>
+            <h2>New Website</h2>
+            <p class="project-status"><strong>Status:</strong> September 2025.</p>
+          </div>
+          <span class="pill">Web</span>
         </header>
 
         <div class="project-media">
-          <img src="favicon.png" class="feature-image" loading="lazy">
+          <img src="favicon.png" class="feature-image" loading="lazy" alt="Website icon">
         </div>
         <p>
           This website is one of my recent projects that was recommended by one of my professors. The goal is to have a landing page that summarizes me as a young engineer to let the world know a little bit about myself, my interests, and what I've been up to.
@@ -182,7 +213,6 @@
       </article>
     </section>
 
-    
     <section class="return-section">
       <a href="index.html" class="return-button">
         <span class="return-icon" aria-hidden="true">&larr;</span>
