@@ -43,14 +43,19 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Classy modern typeface */
+  font-family: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+
   color: var(--text);
-  background: radial-gradient(circle at 20% 20%, rgba(108, 243, 214, 0.05), transparent 38%),
-    radial-gradient(circle at 80% 0%, rgba(106, 123, 255, 0.09), transparent 45%),
-    radial-gradient(circle at 50% 65%, rgba(160, 224, 255, 0.08), transparent 50%),
-    linear-gradient(135deg, #05060c 0%, #0b0f1a 50%, #0d1427 100%);
+  background: var(--bg);
+
   line-height: 1.7;
   letter-spacing: 0.01em;
+
+  /* Scroll smoothing for premium feel */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
