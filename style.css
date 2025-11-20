@@ -1,20 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg: #06080f;
-  --bg-alt: #0c1120;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel-strong: rgba(255, 255, 255, 0.12);
-  --stroke: rgba(255, 255, 255, 0.12);
-  --text: #e8edf7;
-  --muted: #9ba4b8;
-  --accent: #6cf3d6;
-  --accent-2: #6a7bff;
-  --accent-3: #a0e0ff;
-  --glow: 0 25px 80px rgba(106, 123, 255, 0.25);
+  /* Core Backgrounds */
+  --bg: #f8f7f4;              /* off-white */
+  --bg-alt: #1e1f21;          /* charcoal */
+
+  /* Panels / Surfaces */
+  --panel: rgba(255, 255, 255, 0.35);     /* soft frosted panel on light */
+  --panel-strong: rgba(255, 255, 255, 0.65);
+  --stroke: rgba(0, 0, 0, 0.12);          /* subtle charcoal border */
+
+  /* Text System */
+  --text: #1a1a1a;            /* charcoal text on light */
+  --muted: #6c6e72;           /* neutral muted gray */
+
+  /* Accent System (professional neutrals) */
+  --accent: #3c85d1;          /* steel blue */
+  --accent-2: #7a8aff;        /* desaturated periwinkle */
+  --accent-3: #a5c8ff;        /* light ice blue */
+
+  /* Effects */
+  --glow: 0 25px 80px rgba(60, 133, 209, 0.25);
   --radius-lg: 24px;
   --radius-sm: 12px;
-  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.18);
   --blur: blur(16px);
   --transition: all 220ms ease;
 }
