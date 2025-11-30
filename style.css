@@ -383,6 +383,14 @@ main {
   margin-bottom: 0.35rem;
 }
 
+.card img,
+.book-card img,
+.research-card img,
+.social-card img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn,
 .return-button {
   display: inline-flex;
