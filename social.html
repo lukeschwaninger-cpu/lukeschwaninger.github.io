@@ -35,7 +35,7 @@
 
     <section>
       <div class="social-grid">
-        <div class="social-card linkedin-card" data-aspect="1.65">
+        <div class="social-card linkedin-card">
           <iframe
             src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
             title="LinkedIn post"
@@ -130,7 +130,6 @@
     });
 
     const processedFrames = new WeakSet();
-    const linkedinFrames = new Set();
 
     function markCardLoaded(frame) {
       const card = frame.closest('.social-card');
@@ -139,34 +138,13 @@
       }
     }
 
-    function resizeLinkedInFrame(frame) {
-      const container = frame.closest('.linkedin-card');
-      if (!container) return;
-
-      const ratio = Number.parseFloat(container.dataset.aspect) || 1.65;
-      const width = frame.offsetWidth;
-      if (!width || Number.isNaN(ratio)) return;
-
-      const height = Math.round(width * ratio);
-      frame.style.height = `${height}px`;
-    }
-
     function processFrame(frame) {
       if (processedFrames.has(frame)) return;
       processedFrames.add(frame);
-
-      const isLinkedIn = frame.closest('.linkedin-card');
       
       frame.addEventListener('load', () => {
-        if (isLinkedIn) {
-          resizeLinkedInFrame(frame);
-        }
         markCardLoaded(frame);
       });
-      if (isLinkedIn) {
-        linkedinFrames.add(frame);
-        resizeLinkedInFrame(frame);
-      }
     }
 
     function scanForFrames() {
@@ -174,11 +152,7 @@
     }
 
     scanForFrames();
-
-    window.addEventListener('resize', () => {
-      linkedinFrames.forEach(resizeLinkedInFrame);
-    });
-
+    
     const embedObserver = new MutationObserver(scanForFrames);
     embedObserver.observe(document.body, { childList: true, subtree: true });
 
