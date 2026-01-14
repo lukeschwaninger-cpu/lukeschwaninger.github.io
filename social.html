@@ -115,20 +115,6 @@
   <script async src="https://www.instagram.com/embed.js"></script>
 
   <script>
-    const pageHeader = document.querySelector('.site-header');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (pageHeader) {
-        if (currentScroll > lastScroll && currentScroll > 80) {
-          pageHeader.classList.add('header-hidden');
-        } else {
-          pageHeader.classList.remove('header-hidden');
-        }
-      }
-      lastScroll = currentScroll;
-    });
-
     const processedFrames = new WeakSet();
 
     function markCardLoaded(frame) {
@@ -209,5 +195,17 @@
     instaObserver.observe(document.body, { childList: true, subtree: true });
 
   </script>
-</body>
+  <script>
+      const header = document.querySelector(".site-header");
+
+      if (header) {
+        const updateHeader = () => {
+          header.classList.toggle("is-hidden", window.scrollY > 0);
+        };
+
+        updateHeader();
+        window.addEventListener("scroll", updateHeader, { passive: true });
+      }
+    </script>
+  </body>
 </html>
