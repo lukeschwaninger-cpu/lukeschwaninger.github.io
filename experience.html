@@ -66,5 +66,17 @@
   <footer>
     <p>&copy; 2025 Luke Schwaninger</p>
   </footer>
-</body>
+  <script>
+      const header = document.querySelector(".site-header");
+
+      if (header) {
+        const updateHeader = () => {
+          header.classList.toggle("is-hidden", window.scrollY > 0);
+        };
+
+        updateHeader();
+        window.addEventListener("scroll", updateHeader, { passive: true });
+      }
+    </script>
+  </body>
 </html>
