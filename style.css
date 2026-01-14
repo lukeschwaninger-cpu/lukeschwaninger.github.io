@@ -445,7 +445,10 @@ main {
 .project-media .project-video-link {
   justify-self: center;
 }
-
+.project-media img {
+  max-height: 340px;
+  width: 100%;
+}
 .project-announcement {
   margin-bottom: 1.5rem;
 }
