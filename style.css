@@ -137,14 +137,16 @@ main {
 }
 
 .site-header {
-  position: sticky;
-  top: 18px;
+  position: relative;
+  
   z-index: 10;
+  transition: opacity 220ms ease, transform 220ms ease;
 }
 
-.header-hidden {
-  transform: translateY(-140%);
-  transition: var(--transition);
+.site-header.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-120%);
 }
 
 .nav-bar {
@@ -436,6 +438,20 @@ main {
   gap: 1.2rem;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin-bottom: 1.6rem;
+  justify-items: center;
+}
+
+.project-media img,
+.project-media .project-video-link {
+  justify-self: center;
+}
+
+.project-announcement {
+  margin-bottom: 1.5rem;
+}
+
+.project-announcement:last-of-type {
+  margin-bottom: 0;
 }
 
 .project-announcement > p {
