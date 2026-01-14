@@ -447,7 +447,7 @@ main {
 }
 .project-media img {
   max-height: 680px;
-  width: 100%;
+  max-width: 340px;
 }
 .project-announcement {
   margin-bottom: 1.5rem;
