@@ -446,7 +446,7 @@ main {
   justify-self: center;
 }
 .project-media img {
-  max-height: 340px;
+  max-height: 680px;
   width: 100%;
 }
 .project-announcement {
