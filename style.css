@@ -26,6 +26,9 @@
   --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.18);
   --blur: blur(16px);
   --transition: all 220ms ease;
+  --image-max: 480px;
+  --image-max-large: 720px;
+  --image-max-height: 70vh;
 }
 
 * {
@@ -60,6 +63,7 @@ body {
 
 img {
   display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
@@ -427,6 +431,9 @@ main {
 .feature-image,
 .project-video-link img,
 .project-media img {
+  width: min(100%, var(--image-max-large));
+  max-height: min(var(--image-max-height), 680px);
+  margin-inline: auto;
   border-radius: var(--radius-lg);
   border: 1px solid var(--stroke);
   object-fit: cover;
@@ -446,8 +453,13 @@ main {
   justify-self: center;
 }
 .project-media img {
-  max-height: 680px;
-  max-width: 425px;
+  width: min(100%, var(--image-max));
+  max-height: min(var(--image-max-height), 560px);
+}
+
+.project-video-link img {
+  width: min(100%, var(--image-max));
+  max-height: min(var(--image-max-height), 560px);
 }
 .project-announcement {
   margin-bottom: 1.5rem;
@@ -568,7 +580,7 @@ main {
 }
 
 .book-card img {
-  height: 240px;
+  height: clamp(180px, 32vw, 240px);
   object-fit: cover;
   border-radius: 16px;
   margin-bottom: 0.75rem;
