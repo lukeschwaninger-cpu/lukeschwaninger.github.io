@@ -587,23 +587,85 @@ main {
 }
 
 .social-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  column-width: 320px;
+  column-gap: 1.5rem;
 }
 
 .social-card {
-  padding: 1rem;
-  overflow: hidden;
+  padding: 0.9rem;
+  display: block;
+  width: 100%;
+  margin: 0 0 1.5rem;
+  break-inside: avoid;
+  overflow: visible;
+  page-break-inside: avoid;
 }
 
-.social-card iframe,
-.social-card embed,
-.social-card blockquote,
-.social-card .post,
-.social-card .strava-embed-placeholder {
+.social-embed {
+  --embed-height: auto;
   width: 100%;
-  border: none;
+  min-height: var(--embed-min-height, 460px);
+  height: var(--embed-height);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: calc(var(--radius-lg) - 8px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+.social-embed.is-measured {
+  min-height: 0;
+}
+
+.social-embed::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+}
+
+.social-embed--linkedin {
+  --embed-min-height: clamp(560px, 62vw, 760px);
+}
+
+.social-embed--instagram {
+  --embed-min-height: clamp(620px, 92vw, 840px);
+}
+
+.social-embed--strava {
+  --embed-min-height: clamp(400px, 54vw, 560px);
+}
+
+.social-embed iframe,
+.social-embed embed,
+.social-embed blockquote,
+.social-embed .post,
+.social-embed .strava-embed-placeholder,
+.social-embed .instagram-media-rendered {
+  width: 100%;
   display: block;
   height: auto;
+  max-width: 100%;
+  border: none;
+  margin: 0;
+}
+
+.social-embed iframe {
+  min-height: inherit;
+  background: #fff;
+}
+
+.social-embed .instagram-media,
+.social-embed .instagram-media-rendered {
+  min-width: 100% !important;
+  max-width: 100% !important;
+  background: #fff !important;
 }
 
 .linkedin-card {
@@ -678,6 +740,26 @@ footer {
   .experience-content,
   .research-card {
     padding: 1.5rem;
+  }
+
+  .social-card {
+    padding: 0.75rem;
+  }
+
+  .social-grid {
+    columns: 1;
+  }
+
+  .social-embed--linkedin {
+    --embed-min-height: 600px;
+  }
+
+  .social-embed--instagram {
+    --embed-min-height: 680px;
+  }
+
+  .social-embed--strava {
+    --embed-min-height: 420px;
   }
 
   .btn,

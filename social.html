@@ -35,66 +35,77 @@
 
     <section>
       <div class="social-grid">
-        <div class="social-card linkedin-card">
-          <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=1"
-            title="LinkedIn post"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div class="social-card social-card--linkedin">
+          <div class="social-embed social-embed--linkedin">
+            <iframe
+              src="https://www.linkedin.com/embed/feed/update/urn:li:share:7365088325348618241?collapsed=0"
+              title="LinkedIn post"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
 
-        <div class="social-card">
-          <blockquote
-            class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/"
-            data-instgrm-version="14"
-            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-            <a href="https://www.instagram.com/p/DNt-b5E4hrC/" target="_blank" rel="noopener"></a>
-          </blockquote>
+        <div class="social-card social-card--instagram">
+          <div class="social-embed social-embed--instagram">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DNt-b5E4hrC/"
+              data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DNt-b5E4hrC/" target="_blank" rel="noopener"></a>
+            </blockquote>
+          </div>
         </div>
 
-        <div class="social-card">
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/"
-            data-instgrm-version="14"
-            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-            <a href="https://www.instagram.com/p/DHjxbgbSDd7/" target="_blank" rel="noopener"></a>
-          </blockquote>
+        <div class="social-card social-card--instagram">
+          <div class="social-embed social-embed--instagram">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DHjxbgbSDd7/"
+              data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DHjxbgbSDd7/" target="_blank" rel="noopener"></a>
+            </blockquote>
+          </div>
         </div>
 
-        <div class="social-card">
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/p/DQIF13IEiTo/"
-            data-instgrm-version="14"
-            style="background:#fff; border:0; margin:0; padding:0; width:100%;">
-            <a href="https://www.instagram.com/p/DQIF13IEiTo/" target="_blank" rel="noopener"></a>
-          </blockquote>
+        <div class="social-card social-card--instagram">
+          <div class="social-embed social-embed--instagram">
+            <blockquote class="instagram-media"
+              data-instgrm-permalink="https://www.instagram.com/p/DQIF13IEiTo/"
+              data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DQIF13IEiTo/" target="_blank" rel="noopener"></a>
+            </blockquote>
+          </div>
         </div>
 
-        <div class="social-card">
-          <div class="strava-embed-placeholder"
-               data-embed-type="activity"
-               data-embed-id="15574240396"
-               data-style="standard"
-               data-from-embed="false"></div>
+        <div class="social-card social-card--strava">
+          <div class="social-embed social-embed--strava">
+            <div class="strava-embed-placeholder"
+                 data-embed-type="activity"
+                 data-embed-id="15574240396"
+                 data-style="standard"
+                 data-from-embed="false"></div>
+          </div>
         </div>
 
-        <div class="social-card">
-          <div class="strava-embed-placeholder"
-               data-embed-type="activity"
-               data-embed-id="15507294269"
-               data-style="standard"
-               data-from-embed="false"></div>
+        <div class="social-card social-card--strava">
+          <div class="social-embed social-embed--strava">
+            <div class="strava-embed-placeholder"
+                 data-embed-type="activity"
+                 data-embed-id="15507294269"
+                 data-style="standard"
+                 data-from-embed="false"></div>
+          </div>
         </div>
 
-        <div class="social-card">
-          <div class="strava-embed-placeholder"
-               data-embed-type="activity"
-               data-embed-id="15493102061"
-               data-style="standard"
-               data-from-embed="false"></div>
+        <div class="social-card social-card--strava">
+          <div class="social-embed social-embed--strava">
+            <div class="strava-embed-placeholder"
+                 data-embed-type="activity"
+                 data-embed-id="15493102061"
+                 data-style="standard"
+                 data-from-embed="false"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -117,44 +128,94 @@
   <script>
     const processedFrames = new WeakSet();
 
-    function markCardLoaded(frame) {
-      const card = frame.closest('.social-card');
+    function getEmbedShell(node) {
+      return node?.closest('.social-embed') || null;
+    }
+
+    function markCardLoaded(node) {
+      const card = node?.closest('.social-card');
+      const shell = getEmbedShell(node);
+
       if (card) {
         card.classList.add('loaded');
       }
+
+      if (shell) {
+        shell.classList.add('is-loaded');
+      }
+    }
+
+    function setFallbackHeight(shell) {
+      if (!shell || shell.classList.contains('is-measured')) return;
+
+      let fallback = 460;
+
+      if (shell.classList.contains('social-embed--instagram')) {
+        fallback = 720;
+      } else if (shell.classList.contains('social-embed--linkedin')) {
+        fallback = 520;
+      } else if (shell.classList.contains('social-embed--strava')) {
+        fallback = 460;
+      }
+
+      shell.style.setProperty('--embed-height', `${fallback}px`);
+    }
+
+    function applyEmbedHeight(frame, height) {
+      if (!frame) return;
+      const value = Math.round(Number(height));
+      if (!Number.isFinite(value) || value <= 0) return;
+
+      const shell = getEmbedShell(frame);
+
+      frame.style.height = `${value}px`;
+
+      if (shell) {
+        shell.style.setProperty('--embed-height', `${value}px`);
+        shell.classList.add('is-measured');
+      }
+
+      markCardLoaded(frame);
     }
 
     function processFrame(frame) {
       if (processedFrames.has(frame)) return;
       processedFrames.add(frame);
-      
+
+      const shell = getEmbedShell(frame);
+      setFallbackHeight(shell);
+
       frame.addEventListener('load', () => {
+        setFallbackHeight(shell);
         markCardLoaded(frame);
       });
     }
 
     function scanForFrames() {
-      document.querySelectorAll('.social-card iframe').forEach(processFrame);
+      document.querySelectorAll('.social-embed iframe').forEach(processFrame);
+      document.querySelectorAll('.social-embed').forEach(setFallbackHeight);
     }
 
-    scanForFrames();
-    
-    const embedObserver = new MutationObserver(scanForFrames);
-    embedObserver.observe(document.body, { childList: true, subtree: true });
-
     function findFrameBySource(source) {
-      return Array.from(document.querySelectorAll('.social-card iframe'))
+      return Array.from(document.querySelectorAll('.social-embed iframe'))
         .find(frame => frame.contentWindow === source);
     }
 
-    function applyEmbedHeight(frame, height) {
-      if (!frame) return;
-      const value = Number(height);
-      if (!Number.isFinite(value)) return;
-
-      frame.style.height = `${value}px`;
-      markCardLoaded(frame);
+    function processInstagram() {
+      if (window.instgrm?.Embeds) {
+        window.instgrm.Embeds.process();
+      }
     }
+
+    scanForFrames();
+    processInstagram();
+
+    const embedObserver = new MutationObserver(() => {
+      scanForFrames();
+      processInstagram();
+    });
+
+    embedObserver.observe(document.body, { childList: true, subtree: true });
 
     window.addEventListener('message', event => {
       const frame = findFrameBySource(event.source);
@@ -162,10 +223,12 @@
 
       if (event.origin.includes('strava-embeds.com') && Array.isArray(event.data)) {
         const [, type, value] = event.data;
+
         if (type === 'BROADCAST_IFRAME_HEIGHT') {
           applyEmbedHeight(frame, value);
         }
-      return;
+
+        return;
       }
 
       if (event.origin.includes('instagram.com') && typeof event.data === 'string') {
@@ -174,25 +237,20 @@
 
         try {
           const parsed = JSON.parse(payload);
+
           if (parsed?.type === 'MEASURE' && parsed?.details?.height) {
             applyEmbedHeight(frame, parsed.details.height);
           }
         } catch (error) {
-          // Ignore malformed messages
+          // Ignore malformed messages from embeds we do not control.
         }
       }
     });
 
-    function processInstagram() {
-      if (window.instgrm && window.instgrm.Embeds) {
-        window.instgrm.Embeds.process();
-      }
-    }
-
-    window.addEventListener('load', processInstagram);
-
-    const instaObserver = new MutationObserver(processInstagram);
-    instaObserver.observe(document.body, { childList: true, subtree: true });
+    window.addEventListener('load', () => {
+      scanForFrames();
+      processInstagram();
+    });
 
   </script>
   <script>
