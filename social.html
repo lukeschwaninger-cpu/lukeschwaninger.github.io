@@ -127,9 +127,31 @@
 
   <script>
     const processedFrames = new WeakSet();
+    const linkedinResizeObserver = new ResizeObserver(entries => {
+      entries.forEach(entry => {
+        const shell = entry.target;
+        const frame = shell.querySelector('iframe');
+
+        if (frame) {
+          syncLinkedInHeight(frame);
+        }
+      });
+    });
 
     function getEmbedShell(node) {
       return node?.closest('.social-embed') || null;
+    }
+
+    function initializeEmbedShells() {
+      document.querySelectorAll('.social-embed').forEach(shell => {
+        if (!shell.classList.contains('is-loaded')) {
+          shell.classList.add('is-loading');
+        }
+
+        if (shell.classList.contains('social-embed--linkedin')) {
+          linkedinResizeObserver.observe(shell);
+        }
+      });
     }
 
     function markCardLoaded(node) {
@@ -142,23 +164,8 @@
 
       if (shell) {
         shell.classList.add('is-loaded');
+        shell.classList.remove('is-loading');
       }
-    }
-
-    function setFallbackHeight(shell) {
-      if (!shell || shell.classList.contains('is-measured')) return;
-
-      let fallback = 460;
-
-      if (shell.classList.contains('social-embed--instagram')) {
-        fallback = 720;
-      } else if (shell.classList.contains('social-embed--linkedin')) {
-        fallback = 520;
-      } else if (shell.classList.contains('social-embed--strava')) {
-        fallback = 460;
-      }
-
-      shell.style.setProperty('--embed-height', `${fallback}px`);
     }
 
     function applyEmbedHeight(frame, height) {
@@ -171,11 +178,22 @@
       frame.style.height = `${value}px`;
 
       if (shell) {
-        shell.style.setProperty('--embed-height', `${value}px`);
+        shell.style.height = `${value}px`;
         shell.classList.add('is-measured');
       }
 
       markCardLoaded(frame);
+    }
+
+    function syncLinkedInHeight(frame) {
+      const shell = getEmbedShell(frame);
+      if (!shell) return;
+
+      const width = shell.clientWidth;
+      if (!width) return;
+
+      const height = Math.round(Math.max(680, Math.min(980, width * 2.55)));
+      applyEmbedHeight(frame, height);
     }
 
     function processFrame(frame) {
@@ -183,17 +201,23 @@
       processedFrames.add(frame);
 
       const shell = getEmbedShell(frame);
-      setFallbackHeight(shell);
 
       frame.addEventListener('load', () => {
-        setFallbackHeight(shell);
+        if (shell?.classList.contains('social-embed--linkedin')) {
+          syncLinkedInHeight(frame);
+        }
+
         markCardLoaded(frame);
       });
+
+      if (shell?.classList.contains('social-embed--linkedin')) {
+        syncLinkedInHeight(frame);
+      }
     }
 
     function scanForFrames() {
+      initializeEmbedShells();
       document.querySelectorAll('.social-embed iframe').forEach(processFrame);
-      document.querySelectorAll('.social-embed').forEach(setFallbackHeight);
     }
 
     function findFrameBySource(source) {

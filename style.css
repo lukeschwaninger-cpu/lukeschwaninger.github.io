@@ -602,13 +602,8 @@ main {
 }
 
 .social-embed {
-  --embed-height: auto;
   width: 100%;
-  min-height: var(--embed-min-height, 460px);
-  height: var(--embed-height);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  display: block;
   border-radius: calc(var(--radius-lg) - 8px);
   overflow: hidden;
   background: rgba(255, 255, 255, 0.7);
@@ -617,8 +612,21 @@ main {
   z-index: 1;
 }
 
-.social-embed.is-measured {
-  min-height: 0;
+.social-embed.is-loading {
+  min-height: var(--embed-min-height, 460px);
+}
+
+.social-embed.is-loading::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(200, 220, 244, 0.35));
+  z-index: 0;
+}
+
+.social-embed.is-loaded::before,
+.social-embed.is-measured::before {
+  opacity: 0;
 }
 
 .social-embed::after {
@@ -657,7 +665,7 @@ main {
 }
 
 .social-embed iframe {
-  min-height: inherit;
+  width: 100%;
   background: #fff;
 }
 
