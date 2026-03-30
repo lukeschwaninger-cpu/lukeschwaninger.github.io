@@ -389,6 +389,29 @@ main {
   margin-bottom: 0.35rem;
 }
 
+.project-preview-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.project-preview-card h2 {
+  margin: 0;
+}
+
+.project-preview-card p {
+  margin: 0;
+}
+
+.project-preview-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow-soft);
+}
+
 .card img,
 .book-card img,
 .research-card img,
