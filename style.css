@@ -496,6 +496,22 @@ main {
   margin-top: 0.95rem;
 }
 
+.projects-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.projects-two-column > section {
+  min-width: 0;
+}
+
+.projects-two-column .project-announcement {
+  height: 100%;
+  margin-bottom: 0;
+}
+
 .project-video-link {
   position: relative;
   display: block;
@@ -730,6 +746,10 @@ footer {
 }
 
 @media (max-width: 780px) {
+  .projects-two-column {
+    grid-template-columns: 1fr;
+  }
+
   .nav-links {
     gap: 0.25rem;
   }
