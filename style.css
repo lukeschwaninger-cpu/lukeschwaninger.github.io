@@ -524,14 +524,31 @@ main {
   color: inherit;
 }
 
-.research-poster-document {
+.pdf-preview-card {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  min-height: 220px;
   display: block;
-  border: 0;
   border-radius: 18px;
   overflow: hidden;
   background: #fff;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.pdf-preview-card canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+.pdf-preview-card--feature {
+  width: min(100%, var(--image-max-large));
+  margin-inline: auto;
+}
+
+.pdf-preview-card.is-rendered .research-poster-preview {
+  display: none;
 }
 
 .research-poster-preview:hover,
