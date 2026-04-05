@@ -512,6 +512,21 @@ main {
   color: #fff;
 }
 
+.research-poster-link {
+  display: block;
+  color: inherit;
+}
+
+.research-poster-document {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
 .research-poster-preview:hover,
 .research-poster-preview:focus-visible {
   color: #fff;
