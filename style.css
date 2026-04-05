@@ -598,6 +598,62 @@ main {
   gap: 1.5rem;
 }
 
+.contact-main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contact-panel {
+  width: min(720px, 100%);
+}
+
+.contact-actions {
+  display: grid;
+  gap: 1rem;
+  width: min(720px, 100%);
+}
+
+.contact-action {
+  display: grid;
+  gap: 0.45rem;
+  align-content: center;
+  min-height: 96px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.contact-action:visited {
+  color: var(--text);
+}
+
+.contact-action:hover,
+.contact-action:focus-visible {
+  color: var(--text);
+}
+
+.contact-action--primary {
+  border-color: rgba(47, 109, 179, 0.35);
+  box-shadow: var(--glow);
+}
+
+.contact-action-label {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.contact-action-value {
+  color: var(--muted);
+  word-break: break-word;
+}
+
+.contact-action-note {
+  font-size: 0.94rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .experience-list {
   list-style: none;
   padding: 0;

@@ -19,4 +19,10 @@
     <priority>0.8</priority>
   </url>
 
-</urlset>
+  <url>
+    <loc>https://lukeschwaninger.com/contact/</loc>
+    <lastmod>2026-04-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  </urlset>

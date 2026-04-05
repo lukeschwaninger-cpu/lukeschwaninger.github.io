@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Luke Schwaninger</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../favicon.png">
+</head>
+<body>
+  <span class="noise-overlay" aria-hidden="true"></span>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav-bar" aria-label="Primary navigation">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">LS</span>
+        <span class="brand-text">Luke Schwaninger</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../research.html">Research</a></li>
+        <li><a href="../experience.html">Experience</a></li>
+        <li><a href="../books.html">Books</a></li>
+        <li><a href="../social.html">Social</a></li>
+        <li><a href="./" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="site-shell contact-main">
+    <section class="page-hero contact-panel">
+      <h1>Contact</h1>
+      <p>Connect with me regarding research, engineering projects, and professional opportunities.</p>
+    </section>
+
+    <section class="card contact-panel" aria-labelledby="contact-intro-title">
+      <h2 id="contact-intro-title">Quick Connect</h2>
+      <p>I would be glad to connect about research collaborations, design work, and engineering opportunities.</p>
+    </section>
+
+    <section class="contact-actions" aria-label="Primary contact actions">
+      <a class="card contact-action" href="tel:PHONE_PLACEHOLDER">
+        <span class="contact-action-label">Phone</span>
+        <span class="contact-action-value">PHONE_PLACEHOLDER</span>
+      </a>
+
+      <a class="card contact-action" href="mailto:EMAIL_PLACEHOLDER">
+        <span class="contact-action-label">Email</span>
+        <span class="contact-action-value">EMAIL_PLACEHOLDER</span>
+      </a>
+
+      <a class="card contact-action" href="LINKEDIN_URL_PLACEHOLDER" target="_blank" rel="noopener">
+        <span class="contact-action-label">LinkedIn</span>
+        <span class="contact-action-value">LINKEDIN_URL_PLACEHOLDER</span>
+      </a>
+
+      <a class="card contact-action contact-action--primary" href="../assets/luke-schwaninger.vcf" download>
+        <span class="contact-action-label">Save Contact</span>
+        <span class="contact-action-value">Download a vCard to add my contact directly to your phone.</span>
+        <span class="contact-action-note">Recommended for poster-session follow-up</span>
+      </a>
+    </section>
+
+    <section class="card contact-panel" aria-label="Closing note">
+      <p>I'm always open to discussing research, design, and engineering opportunities.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Luke Schwaninger</p>
+  </footer>
+  <script>
+    const header = document.querySelector(".site-header");
+
+    if (header) {
+      const updateHeader = () => {
+        header.classList.toggle("is-hidden", window.scrollY > 0);
+      };
+
+      updateHeader();
+      window.addEventListener("scroll", updateHeader, { passive: true });
+    }
+  </script>
+</body>
+</html>

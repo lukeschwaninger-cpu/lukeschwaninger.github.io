@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Luke Schwaninger
+N:Schwaninger;Luke;;;
+EMAIL;TYPE=INTERNET:EMAIL_PLACEHOLDER
+TEL;TYPE=CELL:PHONE_PLACEHOLDER
+URL:LINKEDIN_URL_PLACEHOLDER
+URL:https://lukeschwaninger.com
+NOTE:Mechanical Engineering student focused on research, materials, and design.
+END:VCARD
