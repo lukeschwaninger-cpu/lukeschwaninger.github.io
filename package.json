@@ -1,0 +1,15 @@
+{
+  "name": "lukeschwaninger.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static portfolio site for Luke Schwaninger with lightweight local testing.",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test:links": "node scripts/check-links.js",
+    "test:e2e": "playwright test",
+    "test": "npm run test:links && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

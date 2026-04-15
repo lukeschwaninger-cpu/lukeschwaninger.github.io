@@ -1,2 +1,5 @@
 lukeschwaninger.github.io-main/
 lukeschwaninger.github.io-main.zip
+node_modules/
+playwright-report/
+test-results/
