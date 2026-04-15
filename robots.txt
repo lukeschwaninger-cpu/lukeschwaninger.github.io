@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://lukeschwaninger.com/sitemap.xml
-
